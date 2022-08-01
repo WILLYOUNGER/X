@@ -44,6 +44,8 @@ protected:
 	virtual void ReadCallback(XNETSTRUCT::XMsgPtr msg);
 
 	virtual bool WriteCallback(XNETSTRUCT::XSocket epollfd, XNETSTRUCT::XSocket socket);
+
+	virtual void TimeOutCallback(XNETSTRUCT::XSocket socket);
 private:
 	XNETBASE::XServer* m_xserver_server;
 

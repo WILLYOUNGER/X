@@ -12,6 +12,7 @@
 #include <memory.h>
 #include <pthread.h>
 
+#include "XServerBase.h"
 #include "XUtils.h"
 #include "XLog.h"
 
@@ -30,6 +31,7 @@ XServer::XServer(std::string ip, int port, int mode, PROTOTYPE protoType)
 	m_str_ip = ip;
 	m_i_port = port;
 	m_i_mode = mode;
+	m_socketTimerNode_timerNodes = new XSocketTimerNode[MAX_FD];
 }
 
 XServer::~XServer()
@@ -193,6 +195,12 @@ void XServer::run()
 	}
 }
 
+void XServer::TimeOutCB(TimerNodeInfoBase timerNode)
+{
+	//NETUTILS->removefd(m_xsocket_epollfd, timerNode.m_socket_sockfd);
+	m_i_sockfdNum--;
+}
+
 void XServer::stopListen()
 {
 	if (m_b_stop == false)
@@ -200,6 +208,25 @@ void XServer::stopListen()
 		m_b_stop = true;
 		pthread_join(m_pthread_pthreadId, NULL);
 	}
+}
+
+void XServer::addTimer(XSocket connfd, sockaddr_in address)
+{
+    m_socketTimerNode_timerNodes[connfd].m_socketaddr_address = address;
+    m_socketTimerNode_timerNodes[connfd].m_socket_sockfd = connfd;
+	auto timeOutCb = bind(&XServer::TimeOutCB,this,std::placeholders::_1);
+    m_wheelTImer_timer.addTimer(TIMESLOT, m_socketTimerNode_timerNodes[connfd], timeOutCb);
+}
+
+void XServer::adjustTimer(XSocket connfd, XTimerNode address)
+{
+    m_wheelTImer_timer.adjustTimer(TIMESLOT, m_socketTimerNode_timerNodes[connfd]);
+}
+
+void XServer::delTimer(XSocket connfd, XTimerNode timerNode)
+{
+	auto timeOutCb = bind(&XServer::TimeOutCB,this,std::placeholders::_1);
+    m_wheelTImer_timer.deleteTimer(m_socketTimerNode_timerNodes[connfd]);
 }
 
 XClient::XClient(string ip, int port, int mode, PROTOTYPE protoType)

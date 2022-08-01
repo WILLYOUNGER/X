@@ -10,11 +10,13 @@ namespace XNETSTRUCT {
 
 static const int MAX_EVENT_NUMBER = 10000;
 
-static const int MAX_FD = 1655350;
+static const int MAX_FD = 10000;
 
 static const int READ_BUFFER_SIZE = 2048;
 
 static const int WRITE_BUFFER_SIZE = 1024;
+
+static const int TIMESLOT = 15;
 
 typedef enum _messageType
 {

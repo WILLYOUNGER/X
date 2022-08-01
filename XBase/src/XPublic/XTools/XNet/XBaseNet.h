@@ -19,6 +19,7 @@
 
 #include <pthread.h>
 #include <netinet/in.h>
+#include "XWheelTimer.h"
 #include "XNetStruct.h"
 
 /**
@@ -26,6 +27,23 @@
  * 
  */
 namespace XNETBASE{
+
+class XSocketTimerNode : public XUTILSTOOL::TimerNodeInfoBase
+{
+public:
+	sockaddr_in m_socketaddr_address;
+    XNETSTRUCT::XSocket m_socket_sockfd;
+	XNETSTRUCT::XSocket m_socket_listenfd;
+
+	virtual bool operator==(XSocketTimerNode& _second)
+    {
+		if (_second.m_socket_sockfd == m_socket_sockfd)
+		{
+			return true;
+		}
+        return false;
+    }
+};
 
 /**
  * @brief socket服务端类
@@ -60,12 +78,41 @@ public:
 
 	void stopListen();
 
+	/**
+	 * @brief socket超时回调：断开链接
+	 * 
+	 * @param timerNode 当前时间节点的信息
+	 */
+	void TimeOutCB(XUTILSTOOL::TimerNodeInfoBase timerNode);
+
 private:
 	static void* loop(void* _this);
 
 	void run();
 
 	static void sig_handler(int sig);
+
+	/**
+	* @brief 给连接添加一个时间轮节点，在60秒后断开连接
+	* @param connfd socket
+	* @param socketaddr_in 地址相关
+	*/
+	void addTimer(XNETSTRUCT::XSocket connfd, sockaddr_in address);
+
+	/**
+	* @brief 修改时间节点
+	* @param timerNode 修改后的时间点
+	*/
+	void adjustTimer(XNETSTRUCT::XSocket connfd, XUTILSTOOL::XTimerNode timerNode);
+
+	/**
+	* @brief 删除定时器，直接执行回调
+	* @param sockfd socket
+	* @param timerNode 需要删除的时间节点，
+	*/
+	void delTimer(XNETSTRUCT::XSocket sockfd, XUTILSTOOL::XTimerNode timerNode);
+
+
 private:
 	std::string m_str_ip {"0.0.0.0"};
 	int m_i_port {23333};
@@ -88,6 +135,10 @@ private:
 	pthread_t m_pthread_pthreadId;
 
 	int m_i_sockfdNum {0};
+
+	XUTILSTOOL::XWheelTimer m_wheelTImer_timer;
+
+	XSocketTimerNode* m_socketTimerNode_timerNodes;
 };
 
 /**

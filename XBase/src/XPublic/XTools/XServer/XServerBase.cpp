@@ -62,3 +62,8 @@ bool XServerBase::WriteCallback(XSocket epollfd, XSocket socket)
 {
     XLOG_INFO("send a msg to a client");
 }
+
+void XServerBase::TimeOutCallback(XSocket socket)
+{
+    XLOG_INFO("socket:%d time out!", socket);
+}
