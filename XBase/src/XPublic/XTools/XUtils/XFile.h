@@ -17,7 +17,8 @@
 #ifndef X_PUBLIC_TOOLS_UTILS_FIEL_H
 #define X_PUBLIC_TOOLS_UTILS_FILE_H
 
-#include <string>
+#include "XUtilsStruct.h"
+#include "rapidjson/document.h"
 
 /**
  * @brief 文件类工具命名空间，除了文件的读取写入外，还负责生成xml json  protobuff等传输协议
@@ -25,65 +26,112 @@
  */
 namespace XFILETOOL
 {
+    class XJsonTool
+    {
+    public:
+        static XJsonTool* GetInstance();
+        XJsonTool();
+        ~XJsonTool();
 
-class XJsonTool
-{
-public:
-    XJsonTool* GetInstance();
-    XJsonTool();
-    ~XJsonTool();
+        bool init();
 
-    bool init();
+        /**
+         * @brief 读取并解析json到单例中
+         * 
+         * @param json 传入的json字符串
+         * @param xjson 解析后的json值
+         * @return int
+         *  <em> 0 <em> 正确
+         *  <em> 1 <em> 解析json字符串失败
+         *  <em> 2 <em> json字符串为空
+         *  <em> 3 <em> json字符串解析后不是json Object
+         *  <em> 4 <em> json字符串中存在key的值不为String
+         */
+        int openJsonByString(std::string json, XJsonPtr xjson);
 
-    /**
-     * @brief 开始构建json字符串
-     * 
-     * @return true 
-     * @return false 
-     */
-    bool beginCreate();
+        /**
+         * @brief 读取并解析文件中的json
+         * 
+         * @param jsonfileName 
+         * @param XJsonPtr 解析后的json内容
+         * @return int 
+         *  <em> 0 <em> 正确
+         *  <em> 1 <em> 文件不存在
+         *  <em> 2 <em> 解析失败
+         */
+        int openJsonByFile(std::string jsonfileName, XJsonPtr xjson);
 
-    /**
-     * @brief 获取从上一次调用beginCreate后构建的字符串
-     * 
-     * @return std::string 
-     */
-    std::string endCreate();
+        /**
+         * @brief 将json类转化为字符串
+         * 
+         * @param xjson 
+         * @return std::string 
+         */
+        std::string jsonToString(XJsonPtr xjson);
 
-    /**
-     * @brief 类型为整形
-     * 
-     * @param key 
-     * @param value 
-     * @return true 成功
-     * @return false 失败
-     */
-    bool setKeyInt(std::string key, int value);
+        /**
+         * @brief 将json字符串保存入文件中
+         * 
+         * @param json 
+         * @return true 
+         * @return false 
+         */
+        bool saveFileByString(std::string fileName, std::string json);
 
-    /**
-     * @brief  类型为字符串型
-     * 
-     * @param key 
-     * @param value 
-     * @return true 
-     * @return false 
-     */
-    bool setKeyString(std::string key, std::string value);
-    
-    /**
-     * @brief 类型为布尔型
-     * 
-     * @param key 
-     * @param value 
-     * @return true 
-     * @return false 
-     */
-    bool setKeyBool(std::string key, bool value);
-private:
-};
+        /**
+         * @brief 将json类保存入文件中
+         * 
+         * @param fileName 
+         * @param xjson 
+         * @return true 
+         * @return false 
+         */
+        bool saveFileByJson(std::string fileName, XJsonPtr xjson);
+    private:
+        /**
+         * @brief 解析json到XJson中
+         * 
+         * @param json 
+         * @param xjson 
+         * @return int 
+         *  <em> 0 <em> 正常
+         *  <em> 4 <em> json字符串中存在key的值不为String
+         */
+        int buildXJson(rapidjson::Value &json, XJsonPtr xjson);
 
-#define XJSONTOOLINSTANCE() XJsonTool::GetInstance();
+        /**
+         * @brief 解析json列表到list
+         * 
+         * @param json 需要解析的json
+         * @param list 
+         * @return int 
+         *  <em> 0 <em> 正常
+         *  <em> 4 <em> json字符串中存在key的值不为String
+         */
+        int parseList(rapidjson::Value &json, std::list<XJsonValuePtr> &list);
 
+    private:
+        /**
+         * @brief 返回值枚举
+         *  <em> 0 <em> 正常
+         *  <em> 1 <em> 解析json字符串失败
+         *  <em> 2 <em> json字符串为空
+         *  <em> 3 <em> json字符串解析后不是json Object
+         *  <em> 4 <em> json字符串中存在key的值不为String
+         */
+        enum jsonToolReturn
+        {
+            JSONTOOLRETURN_NORMAL = 0,
+            JSONTOOLRETURN_PARSEERROR = 1,
+            JSONTOOLRETURN_JSONSTRINGNULL = 2,
+            JSONTOOLRETURN_JSONSTRINGISNOTJSONOBJECT = 3,
+            JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING = 4
+        };
+
+        static XJsonTool* m_xJsonTool_instance;
+    };
+
+    #define XJSONTOOLINSTANCE() XJsonTool::GetInstance();
 };
 
 #endif //X_PUBLIC_TOOLS_UTILS_FILE_H

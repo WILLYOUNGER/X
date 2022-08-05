@@ -1,0 +1,143 @@
+/**
+*  @file     XUtilsStruct.h
+*  @brief    各工具的数据结构类的定义
+*  Details.
+*
+*  @author   wangxinxiao
+*  @email    wxx1035@163.com
+*  @version  1.0.0.0
+*  @date     2022/8/3
+*
+*  Change History :
+*  <Date>     | <Version> | <Author>       | <Description>
+*  2022/8/3   | 1.0.0.0   | wangxinxiao    | Create file
+*-
+*/
+
+#ifndef X_PUBLIC_STRUCT_UTILSSTRUCT_H
+#define X_PUBLIC_STRUCT_UTILSSTRUCT_H
+
+#include <map>
+#include <list>
+#include <memory>
+#include <string>
+
+/**
+ * @brief 文件类工具命名空间，除了文件的读取写入外，还负责生成xml json  protobuff等传输协议
+ * 
+ */
+namespace XFILETOOL
+{
+    class XJson;
+    class XJsonValue;
+
+    typedef std::shared_ptr<XJson> XJsonPtr;
+    typedef std::shared_ptr<XJsonValue> XJsonValuePtr;
+
+    typedef enum _xjson_type_
+    {
+        XJSONTYPE_NONE = 0,
+        XJSONTYPE_INT,
+        XJSONTYPE_DOUBLE,
+        XJSONTYPE_STRING,
+        XJSONTYPE_BOOL,
+        XJSONTYPE_OBJECT,
+        XJSONTYPE_ARRAY,
+    } XJSONTYPE;
+
+    class XJsonValue
+    {
+    public:
+        XJsonValue();
+        XJsonValue(int value);
+        XJsonValue(bool value);
+        XJsonValue(std::string value);
+        XJsonValue(double value);
+        XJsonValue(XJsonPtr value);
+        XJsonValue(std::list<XJsonValuePtr> value);
+
+        ~XJsonValue();
+
+        void setIntValue(int value);
+        void setDoubleValue(double value);
+        void setStringValue(std::string value);
+        void setBoolValue(bool value);
+        void setArrayValue(std::list<XJsonValuePtr> value);
+        void setObjectValue(XJsonPtr value);
+
+        inline XJSONTYPE getType()
+        {
+            return m_XJsonType_type;
+        }
+
+        inline int getIntValue()
+        {
+            return m_i_value;
+        }
+
+        inline double getDoubleValue()
+        {
+            return m_d_value;
+        }
+
+        inline bool getBoolValue()
+        {
+            return m_b_value;
+        }
+
+        inline std::string getStringValue()
+        {
+            return m_str_value;
+        }
+
+        inline std::list<XJsonValuePtr> getArrayValue()
+        {
+            return m_listXJsonPtr_value;
+        }
+
+        inline XJsonPtr getObjectValue()
+        {
+            return m_xJsonPtr_value;
+        }
+    private:
+        XJSONTYPE m_XJsonType_type { XJSONTYPE_NONE };
+
+        int m_i_value { 0 };
+        XJsonPtr m_xJsonPtr_value;
+        double m_d_value { 0 };
+        std::string m_str_value { "" };
+        bool m_b_value { false };
+        std::list<XJsonValuePtr> m_listXJsonPtr_value;
+    };
+
+    class XJson
+    {
+    public:
+        XJson();
+        ~XJson();
+        
+        /**
+         * @brief 设置键值对
+         * 
+         * @param key 
+         * @param value 
+         * @return int 
+         * <em> 0 <em> 正常
+         * <em> 1 <em> value为空
+         */
+        int setKeyValue(std::string key, XJsonValuePtr value);
+
+        inline XJsonValuePtr getValue(std::string key)
+        {
+            return m_mapStrXJVPtr_content[key];
+        }
+
+        void clear();
+
+        void deleteKey(std::string key);
+    private:
+        std::map<std::string, XJsonValuePtr> m_mapStrXJVPtr_content;
+    };
+};
+
+#endif //X_PUBLIC_STRUCT_UTILSSTRUCT_H

@@ -9,7 +9,7 @@ using namespace std;
 using namespace XNETBASE;
 int main(int argc, char* argv[])
 {
-	if (!XLOG->init("XWebLog.txt", 1))
+	if (!XLOG->init("XWebLog.txt", 0))
 	{
 		return 0;
 	}

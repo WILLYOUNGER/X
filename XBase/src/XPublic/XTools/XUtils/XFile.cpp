@@ -15,6 +15,7 @@
 */
 
 #include "XFile.h"
+#include "XLog.h"
 
 using namespace std;
 /**
@@ -23,6 +24,8 @@ using namespace std;
  */
 namespace XFILETOOL
 {
+    XJsonTool* XJsonTool::m_xJsonTool_instance = nullptr; 
+
     XJsonTool::XJsonTool()
     {
 
@@ -35,36 +38,154 @@ namespace XFILETOOL
 
     XJsonTool* XJsonTool::GetInstance()
     {
-        return nullptr;
-    }
-
-    bool XJsonTool::beginCreate()
-    {
-        return false;
-    }
-
-    string XJsonTool::endCreate()
-    {
-        return "";
+        if (m_xJsonTool_instance != nullptr)
+        {
+            m_xJsonTool_instance = new XJsonTool();
+            m_xJsonTool_instance->init();
+        }
+        return m_xJsonTool_instance;
     }
 
     bool XJsonTool::init()
     {
-        return false;
+        return true;
     }
 
-    bool XJsonTool::setKeyInt(string key, int value)
+    int XJsonTool::openJsonByString(std::string json, XJsonPtr xjson)
     {
-        return false;
+        if (json == "")
+        {
+            return JSONTOOLRETURN_JSONSTRINGNULL;
+        }
+
+        rapidjson::Document doc;
+	    doc.Parse(json.c_str());
+        if (doc.HasParseError())
+        {
+            return JSONTOOLRETURN_PARSEERROR;
+        }
+        if (!doc.IsObject())
+        {
+            return JSONTOOLRETURN_JSONSTRINGISNOTJSONOBJECT;
+        }
+        
+        xjson->clear();
+
+        return buildXJson(doc, xjson);
     }
 
-    bool XJsonTool::setKeyBool(string key, bool value)
+    int XJsonTool::openJsonByFile(std::string jsonfileName, XJsonPtr xjson)
     {
-        return false;
+
     }
 
-    bool XJsonTool::setKeyString(string key, string value)
+    std::string XJsonTool::jsonToString(XJsonPtr xjson)
     {
-        return false;
+        
+    }
+
+    bool XJsonTool::saveFileByString(std::string fileName, std::string json)
+    {
+
+    }
+
+    bool XJsonTool::saveFileByJson(std::string fileName, XJsonPtr xjson)
+    {
+        
+    }
+
+    int XJsonTool::buildXJson(rapidjson::Value &json, XJsonPtr xjson)
+    {
+        for (auto jsonIter = json.MemberBegin(); jsonIter != json.MemberEnd(); jsonIter++)
+        {
+            if (jsonIter->name.IsString())
+            {
+                XJsonValuePtr _xJVP_value = make_shared<XJsonValue>();
+                if (jsonIter->value.IsBool())
+                {
+                    _xJVP_value->setBoolValue(jsonIter->value.GetBool());
+                }
+                else if (jsonIter->value.IsString())
+                {
+                    _xJVP_value->setStringValue(jsonIter->value.GetString());
+                }
+                else if (jsonIter->value.IsInt())
+                {
+                    _xJVP_value->setIntValue(jsonIter->value.GetInt());
+                }
+                else if (jsonIter->value.IsDouble())
+                {
+                    _xJVP_value->setDoubleValue(jsonIter->value.GetDouble());
+                }
+                else if (jsonIter->value.IsObject())
+                {
+                    XJsonPtr _xjsonPtr_temp = make_shared<XJson>();
+                    if (JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING == buildXJson(jsonIter->value, _xjsonPtr_temp))
+                    {
+                        return JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING;
+                    }
+                    _xJVP_value->setObjectValue(_xjsonPtr_temp);
+                }
+                else if (jsonIter->value.IsArray())
+                {
+                    std::list<XJsonValuePtr> _listXJVP_temp;
+                    if (JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING == parseList(jsonIter->value, _listXJVP_temp))
+                    {
+                        return JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING;
+                    }
+                    _xJVP_value->setArrayValue(_listXJVP_temp);
+                }
+                xjson->setKeyValue(jsonIter->name.GetString(), _xJVP_value);   
+            }
+            else
+            {
+                return JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING;
+            }
+        }
+        return JSONTOOLRETURN_NORMAL;
+    }
+
+    int XJsonTool::parseList(rapidjson::Value &json, std::list<XJsonValuePtr> &list)
+    {
+        for (int i = 0; i < json.Size(); i++)
+        {
+            XJsonValuePtr _xJVP_value = make_shared<XJsonValue>();
+            if (json[i].IsBool())
+            {
+                _xJVP_value->setBoolValue(json[i].GetBool());
+            }
+            else if (json[i].IsString())
+            {
+                _xJVP_value->setStringValue(json[i].GetString());
+            }
+            else if (json[i].IsInt())
+            {
+                _xJVP_value->setIntValue(json[i].GetInt());
+            }
+            else if (json[i].IsDouble())
+            {
+                _xJVP_value->setDoubleValue(json[i].GetDouble());
+            }
+            else if (json[i].IsObject())
+            {
+                XJsonPtr _xjsonPtr_temp = make_shared<XJson>();
+                if (JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING == buildXJson(json[i], _xjsonPtr_temp))
+                {
+                    return JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING;
+                }
+                _xJVP_value->setObjectValue(_xjsonPtr_temp);
+            }
+            else if (json[i].IsArray())
+            {
+                std::list<XJsonValuePtr> _listXJVP_temp;
+                if (JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING == parseList(json[i], _listXJVP_temp))
+                {
+                    return JSONTOOLRETURN_JSONSTRINGKEYISNOTSTRING;
+                }
+                _xJVP_value->setArrayValue(_listXJVP_temp);
+            }
+            list.push_back(_xJVP_value);
+        }
+        return JSONTOOLRETURN_NORMAL;
     }
 };

@@ -3,14 +3,12 @@
 #include "XLog/XLog.h"
 #include <iostream>
 
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
+#include "XFile.h"
 
 //#include <Config.h>
 using namespace std;
 using namespace XNETBASE;
-using namespace rapidjson;
+using namespace XFILETOOL;
 int main(int argc, char* argv[])
 {
 	if (!XLOG->init("XWebLog.txt", 1))
@@ -26,18 +24,45 @@ int main(int argc, char* argv[])
 	// 	sleep(1000);
 	// }
 
-	const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
-	Document d;
-	d.Parse(json);
+	// const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
+	// Document d;
+	// d.Parse(json);
 
-	Value& s = d["stars"];
-	s.SetInt(s.GetInt() + 1);
+	// Value& s = d["stars"];
+	// s.SetInt(s.GetInt() + 1);
+	
+	// Value contact;
+	// contact.SetObject();
+	// contact.AddMember("name", "Milo", d.GetAllocator());
+	// contact.AddMember("married", true, d.GetAllocator());
 
-	StringBuffer buffer;
-	Writer<StringBuffer> writer(buffer);
-	d.Accept(writer);
+	// d.AddMember("project", contact, d.GetAllocator());
 
-	cout << buffer.GetString() << endl;
+	// Value array;
+	// array.SetArray();
+	// array.PushBack(true, d.GetAllocator());
+	// array.PushBack("true", d.GetAllocator());
+
+	// d.AddMember("array", array, d.GetAllocator());
+
+	// StringBuffer buffer;
+	// Writer<StringBuffer> writer(buffer);
+	// d.Accept(writer);
+
+	// cout << buffer.GetString() << endl;
+
+	const char* json = "{\"project\":\"rapidjson\",\"stars\":11,\"oject\":{\"name\":\"Milo\",\"married\":true},\"array\":[true,\"true\"]}";
+	
+	XJsonPtr _xJsonPtr_json = make_shared<XJson>();
+
+	XJsonTool::GetInstance()->openJsonByString(string(json), _xJsonPtr_json);
+
+	cout << _xJsonPtr_json->getValue("project")->getStringValue() << endl 
+		 << _xJsonPtr_json->getValue("stars")->getIntValue() << endl
+		 << _xJsonPtr_json->getValue("oject")->getObjectValue()->getValue("name")->getStringValue() << endl
+		 << _xJsonPtr_json->getValue("oject")->getObjectValue()->getValue("married")->getBoolValue() << endl
+		 << _xJsonPtr_json->getValue("array")->getArrayValue().front()->getBoolValue() << endl
+		 << _xJsonPtr_json->getValue("array")->getArrayValue().back()->getStringValue() << endl;
 
 	return 0;
 }
