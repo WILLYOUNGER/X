@@ -90,9 +90,13 @@ namespace XFILETOOL
             return m_str_value;
         }
 
-        inline std::list<XJsonValuePtr> getArrayValue()
+        inline void getArrayValue(std::list<XJsonValuePtr> &res)
         {
-            return m_listXJsonPtr_value;
+            res.clear();
+            for (auto iter = m_listXJsonPtr_value.begin(); iter != m_listXJsonPtr_value.end(); iter++)
+            {
+                res.push_back((*iter));
+            }
         }
 
         inline XJsonPtr getObjectValue()
@@ -131,6 +135,8 @@ namespace XFILETOOL
         {
             return m_mapStrXJVPtr_content[key];
         }
+
+        void getAllKeyValue(std::map<std::string, XJsonValuePtr> &allKeyValue);
 
         void clear();
 

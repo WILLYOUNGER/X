@@ -15,6 +15,12 @@
 */
 
 #include "XFile.h"
+
+#include <map>
+
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
+
 #include "XLog.h"
 
 using namespace std;
@@ -79,9 +85,21 @@ namespace XFILETOOL
 
     }
 
-    std::string XJsonTool::jsonToString(XJsonPtr xjson)
+    int XJsonTool::jsonToString(XJsonPtr xjson, std::string &str)
     {
+        rapidjson::Document json;
         
+        if (JSONTOOLRETURN_JSONOBJECTISNULL == xJsonToRapidJson(json, xjson, json))
+        {
+            return JSONTOOLRETURN_JSONOBJECTISNULL;
+        }
+        
+        rapidjson::StringBuffer buffer;
+	    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+	    json.Accept(writer);
+        str = buffer.GetString();
+
+        return JSONTOOLRETURN_NORMAL;
     }
 
     bool XJsonTool::saveFileByString(std::string fileName, std::string json)
@@ -185,6 +203,105 @@ namespace XFILETOOL
                 _xJVP_value->setArrayValue(_listXJVP_temp);
             }
             list.push_back(_xJVP_value);
+        }
+        return JSONTOOLRETURN_NORMAL;
+    }
+
+    int XJsonTool::xJsonToRapidJson(rapidjson::Value &json, XJsonPtr xjson, rapidjson::Document &doc)
+    {
+        json.SetObject();
+        std::map<std::string, XJsonValuePtr> _mapStrXJVP_json;
+        xjson->getAllKeyValue(_mapStrXJVP_json);
+        if (0 == _mapStrXJVP_json.size())
+        {
+            return JSONTOOLRETURN_JSONOBJECTISNULL;
+        }
+
+        for (auto iter = _mapStrXJVP_json.begin(); iter != _mapStrXJVP_json.end(); iter++)
+        {
+            XJsonValuePtr _XJVP_temp = iter->second;
+
+            if (XJSONTYPE_INT == _XJVP_temp->getType())
+            {
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _XJVP_temp->getIntValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_DOUBLE == _XJVP_temp->getType())
+            {
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _XJVP_temp->getDoubleValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_STRING == _XJVP_temp->getType())
+            {
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _XJVP_temp->getStringValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_BOOL == _XJVP_temp->getType())
+            {
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _XJVP_temp->getBoolValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_OBJECT == _XJVP_temp->getType())
+            {
+                rapidjson::Value _value;
+                if (JSONTOOLRETURN_JSONOBJECTISNULL == xJsonToRapidJson(_value, _XJVP_temp->getObjectValue(), doc))
+                {
+                    return JSONTOOLRETURN_JSONOBJECTISNULL;
+                }
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _value, doc.GetAllocator());
+            }
+            else if (XJSONTYPE_ARRAY == _XJVP_temp->getType())
+            {
+                rapidjson::Value _value;
+                if (JSONTOOLRETURN_JSONOBJECTISNULL == xJsonToRapidJsonArray(_value, _XJVP_temp, doc))
+                {
+                    return JSONTOOLRETURN_JSONOBJECTISNULL;
+                }
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _value, doc.GetAllocator());
+            }
+        }
+        return JSONTOOLRETURN_NORMAL;
+    }
+
+    int XJsonTool::xJsonToRapidJsonArray(rapidjson::Value &json, XJsonValuePtr xjsonValue, rapidjson::Document &doc)
+    {
+        json.SetArray();
+        std::list<XJsonValuePtr> _listXJVP_temp;
+        xjsonValue->getArrayValue(_listXJVP_temp);
+        for (auto iter = _listXJVP_temp.begin(); iter != _listXJVP_temp.end(); iter++)
+        {
+            XJsonValuePtr _XJVP_temp = (*iter);
+            if (XJSONTYPE_INT == _XJVP_temp->getType())
+            {
+                json.PushBack(_XJVP_temp->getIntValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_DOUBLE == _XJVP_temp->getType())
+            {
+                json.PushBack(_XJVP_temp->getDoubleValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_STRING == _XJVP_temp->getType())
+            {
+                json.PushBack(rapidjson::Value(_XJVP_temp->getStringValue(), doc.GetAllocator()).Move(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_BOOL == _XJVP_temp->getType())
+            {
+                json.PushBack(_XJVP_temp->getBoolValue(), doc.GetAllocator());
+            }
+            else if (XJSONTYPE_OBJECT == _XJVP_temp->getType())
+            {
+                rapidjson::Value _value;
+                if (JSONTOOLRETURN_JSONOBJECTISNULL == xJsonToRapidJson(_value, _XJVP_temp->getObjectValue(), doc))
+                {
+                    return JSONTOOLRETURN_JSONOBJECTISNULL;
+                }
+                json.PushBack(_value, doc.GetAllocator());
+            }
+            else if (XJSONTYPE_ARRAY == _XJVP_temp->getType())
+            {
+                json.PushBack(_XJVP_temp->getIntValue(), doc.GetAllocator());
+                rapidjson::Value _value;
+                if (JSONTOOLRETURN_JSONOBJECTISNULL == xJsonToRapidJsonArray(_value, _XJVP_temp, doc))
+                {
+                    return JSONTOOLRETURN_JSONOBJECTISNULL;
+                }
+                json.PushBack(_value, doc.GetAllocator());
+            }
         }
         return JSONTOOLRETURN_NORMAL;
     }

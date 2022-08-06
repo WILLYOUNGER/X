@@ -51,18 +51,23 @@ int main(int argc, char* argv[])
 
 	// cout << buffer.GetString() << endl;
 
-	const char* json = "{\"project\":\"rapidjson\",\"stars\":11,\"oject\":{\"name\":\"Milo\",\"married\":true},\"array\":[true,\"true\"]}";
+	const char* json = "{\"project\":\"rapidjson\",\"stars\":11,\"object\":{\"name\":\"Milo\",\"married\":null},\"array\":[true, 123]}";
 	
 	XJsonPtr _xJsonPtr_json = make_shared<XJson>();
 
-	XJsonTool::GetInstance()->openJsonByString(string(json), _xJsonPtr_json);
+	XJSONTOOLINSTANCE()->openJsonByString(string(json), _xJsonPtr_json);
 
-	cout << _xJsonPtr_json->getValue("project")->getStringValue() << endl 
-		 << _xJsonPtr_json->getValue("stars")->getIntValue() << endl
-		 << _xJsonPtr_json->getValue("oject")->getObjectValue()->getValue("name")->getStringValue() << endl
-		 << _xJsonPtr_json->getValue("oject")->getObjectValue()->getValue("married")->getBoolValue() << endl
-		 << _xJsonPtr_json->getValue("array")->getArrayValue().front()->getBoolValue() << endl
-		 << _xJsonPtr_json->getValue("array")->getArrayValue().back()->getStringValue() << endl;
+	string _str_json;
+	int _i_return = XJSONTOOLINSTANCE()->jsonToString(_xJsonPtr_json, _str_json);
+	if (0 == _i_return)
+	{
+		cout << _str_json << endl;
+	}
+	else
+	{
+		cout << _i_return << endl;
+	}
+	
 
 	return 0;
 }

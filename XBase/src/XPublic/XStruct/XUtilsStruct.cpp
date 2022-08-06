@@ -122,6 +122,14 @@ namespace XFILETOOL
         return 0;
     }
 
+    void XJson::getAllKeyValue(std::map<std::string, XJsonValuePtr> &allKeyValue)
+    {
+        for (auto iter = m_mapStrXJVPtr_content.begin(); iter != m_mapStrXJVPtr_content.end(); iter++)
+        {
+            allKeyValue[iter->first] = iter->second;
+        }
+    }
+
     void XJson::clear()
     {
         m_mapStrXJVPtr_content.clear();
