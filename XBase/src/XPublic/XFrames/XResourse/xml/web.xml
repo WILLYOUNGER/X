@@ -3,14 +3,10 @@
 <Xservlet>
 	<Xservlet-mapping>
 	    <Xservlet-name>XTestServlet</Xservlet-name>
-	    <Xurl-pattern>/login</Xurl-pattern>
-	</Xservlet-mapping>
-	<Xservlet-mapping>
-	    <Xservlet-name>XTestServlet</Xservlet-name>
-	    <Xurl-pattern>/resgiter</Xurl-pattern>
-	</Xservlet-mapping>
-	<Xservlet-mapping>
-	    <Xservlet-name>XTestServlet</Xservlet-name>
 	    <Xurl-pattern>/test</Xurl-pattern>
+	</Xservlet-mapping>
+	<Xservlet-mapping>
+	    <Xservlet-name>XTestServlet</Xservlet-name>
+	    <Xurl-pattern>/getAllBlog</Xurl-pattern>
 	</Xservlet-mapping>
 <Xservlet>

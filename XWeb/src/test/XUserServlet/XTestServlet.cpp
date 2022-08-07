@@ -12,4 +12,6 @@ void XTestServlet::doGet(XRequest &req, XResponse &res)
 	cout << "version:" << req.getVersion() << endl;
 	cout << "key-value Num:" << req.getAttributeNum() << endl;
 	cout << "deal a event !" << endl;
+
+	const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
 }

@@ -6,16 +6,20 @@
 *  @author   wangxinxiao
 *  @email    wxx1035@163.com
 *  @version  1.0.0.0
-*  @date     2022/8/1
+*  @date     2022/8/7
 *
 *  Change History :
 *  <Date>     | <Version> | <Author>       | <Description>
-*  2022/8/1   | 1.0.0.0   | wangxinxiao    | Create file
+*  2022/8/1   | 1.0.0.0   | wangxinxiao    | Create file(add XJsonTool)
+*  2022/8/7   | 1.0.1.0   | wangxinxiao    | add XFileTool
 *-
 */
 
 #ifndef X_PUBLIC_TOOLS_UTILS_FIEL_H
 #define X_PUBLIC_TOOLS_UTILS_FILE_H
+
+#include <vector>
+#include <list>
 
 #include "rapidjson/document.h"
 #include "XUtilsStruct.h"
@@ -26,8 +30,6 @@
  */
 namespace XFILETOOL
 {
-    using JsonValue = rapidjson::GenericValue< rapidjson::UTF16LE<> >;
-
     class XJsonTool
     {
     public:
@@ -160,7 +162,52 @@ namespace XFILETOOL
         static XJsonTool* m_xJsonTool_instance;
     };
 
+    class XFileTool
+    {
+    public:
+        static XFileTool* GetInstance();
+
+        XFileTool();
+
+        ~XFileTool();
+
+        void init();
+
+        //目录或文件是否存在
+        bool dirOrFileExist(std::string dirOrFileName);
+
+        /**
+         * @brief 目录中文件的数量
+         * 
+         * @param dirName 目录名称
+         * @param number 文件数量（包括隐藏文件）
+         * @return int 
+         *  <em> 0 <em> 正常
+         *  <em> 1 <em> 目录不存在
+         *  <em> 2 <em> 不是目录
+         *  <em> 3 <em> 不是目录也不是文件
+         *  <em> 4 <em> 是文件
+         */
+        int dirFileNumber(std::string dirName, int number);
+
+        /**
+         * @brief 目录中文件名称
+         * 
+         * @param dirName 目录名称
+         * @param suffix 需要的后缀名的名称数组
+         * @param fileNames 返回的文件名称
+         * @return int 
+         *  <em> 0 <em> 正常
+         *  <em> 1 <em> 目录不存在
+         */
+        int dirFileNames(std::string dirName, std::vector<std::string> &suffix, std::vector<std::string> &fileNames);
+
+    private:
+        static XFileTool* m_xFileTool_instance;
+    };
+
     #define XJSONTOOLINSTANCE() XJsonTool::GetInstance()
+    #define XFILETOOLINSTANCE() XFileTool::GetInstance()
 };
 
 #endif //X_PUBLIC_TOOLS_UTILS_FILE_H

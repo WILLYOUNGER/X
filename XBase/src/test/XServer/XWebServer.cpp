@@ -20,7 +20,6 @@ XWebServer::XWebServer(std::string ip, int port)
 void XWebServer::init(string ip, int port)
 {
     pool = new XPthreadPool<XMsgPtr, XHttp>(8, 10000);
-
     XServerBase::init(ip, port);
 }
 

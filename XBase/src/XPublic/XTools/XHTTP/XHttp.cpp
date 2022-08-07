@@ -38,7 +38,6 @@ void XHttp::init()
 
 void XHttp::process(XMsgPtr &msg)
 {
-	//XLOG_INFO("%s", msg->getContent().c_str());
 	m_msg = msg;
 	m_read_now = 0;
 	m_line_begin = 0;
@@ -407,6 +406,14 @@ void XHttp::dealresponse(std::string &str)
 		str = str + "Content-Length: " + to_string(m_response.getContentLength()) + "\r\n";
 		str = str + "Connection:" + ((m_b_isKeepAlive == true) ? "keep-alive" : "close") + "\r\n";
 		str = str + "Content-Type:image/gif\r\n";
+		str = str + "\r\n";
+	}
+	else if (_code == JSON_RESPONSE)
+	{
+		str = str + "HTTP/1.1 200 OK\r\n";
+		str = str + "Content-Length: " + to_string(m_response.getContentLength()) + "\r\n";
+		str = str + "Connection:" + ((m_b_isKeepAlive == true) ? "keep-alive" : "close") + "\r\n";
+		str = str + "Content-Type:application/json; charset=utf-8\r\n";
 		str = str + "\r\n";
 	}
 	m_response.setHeadString(str);

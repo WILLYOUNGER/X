@@ -20,7 +20,6 @@ XWebServer::XWebServer(std::string ip, int port)
 void XWebServer::init(string ip, int port)
 {
     pool = new XPthreadPool<XMsgPtr, XHttp>(8, 10000);
-
     XServerBase::init(ip, port);
 }
 
@@ -36,6 +35,7 @@ void XWebServer::CloseCallback(void)
 void XWebServer::ReadCallback(XMsgPtr msg)
 {
     pool->append(msg);
+    XLOG_INFO("%s", msg->getContent().c_str());
 }
 
 bool XWebServer::WriteCallback(XSocket epollfd, XSocket socket)
@@ -53,11 +53,22 @@ bool XWebServer::WriteCallback(XSocket epollfd, XSocket socket)
         {
             struct iovec _iv[2];
             int _iv_count;
-            char* _head = (char*)malloc(temp.getHeadString().size() * sizeof(char));
+            char* _head = (char*)malloc((temp.getHeadString().size() + 1) * sizeof(char));
+            char* _content = (char*)malloc((temp.getContentLength() + 1) * sizeof(char));
             strncpy(_head, temp.getHeadString().c_str(), temp.getHeadString().size());
             _iv[0].iov_base = _head;
             _iv[0].iov_len = temp.getHeadString().size();
-            _iv[1].iov_base = temp.getFileAddress();
+            if (temp.contentIsFile())
+            {
+                _iv[1].iov_base = temp.getFileAddress();
+            }
+            else
+            {
+                strncpy(_content, temp.getContent().c_str(), temp.getContent().size());
+                _content[temp.getContent().size()] = '\0';
+                _iv[1].iov_base = _content;
+            }
+            
             _iv[1].iov_len = temp.getContentLength();
             _iv_count = 2;
             int bytes_to_send = _iv[0].iov_len + _iv[1].iov_len;
@@ -78,6 +89,9 @@ bool XWebServer::WriteCallback(XSocket epollfd, XSocket socket)
 
             }
             XLOG_INFO("%s", _head);
+            free(_head);
+            free(_content);
+
             XWebServer::m_reply[socket]->pop_front();
             NETUTILS->modfd(epollfd, socket, EPOLLIN, 0);
 

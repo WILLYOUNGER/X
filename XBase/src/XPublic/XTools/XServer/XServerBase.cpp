@@ -21,7 +21,6 @@ XServerBase::XServerBase()
 
 XServerBase::XServerBase(string ip, int port)
 {
-    //pool = new XPthreadPool<XMsgPtr, XHttp>(8, 10000);
     init(ip, port);
 }
 

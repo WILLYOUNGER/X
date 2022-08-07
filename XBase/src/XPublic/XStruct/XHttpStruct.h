@@ -34,6 +34,7 @@ typedef enum _http_code {
 	ICO_REQUEST,
 	JPG_REQUEST,
 	GIF_REQUEST,
+	JSON_RESPONSE,
 	INTERNAL_ERROR,
 	CLOSED_CONNECTION
 } HTTP_CODE;
@@ -124,6 +125,7 @@ public:
 
 	void setFileAddress(char* address)
 	{
+		m_b_contentIsFile = true;
 		m_c_fileAddress_ptr = address;
 	}
 
@@ -152,6 +154,23 @@ public:
 		return m_str_head;
 	}
 
+	void setContent(std::string content)
+	{
+		m_b_contentIsFile = false;
+		m_i_contentLength = content.length();
+		m_str_content = content;
+	}
+
+	std::string getContent()
+	{
+		return m_str_content;
+	}
+
+	bool contentIsFile()
+	{
+		return m_b_contentIsFile;
+	}
+
 	void setNeedClose(bool needClose)
 	{
 		m_b_isNeedClose = needClose;
@@ -167,13 +186,17 @@ private:
 
 	bool m_b_isEmpty;
 
-	char* m_c_fileAddress_ptr;
+	char* m_c_fileAddress_ptr { nullptr };
 
 	int m_i_contentLength;
 
 	bool m_b_isNeedClose { true };
 
 	std::string m_str_head;
+
+	std::string m_str_content;
+
+	bool m_b_contentIsFile {false};
 };
 }
 

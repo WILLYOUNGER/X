@@ -20,6 +20,11 @@ if [ ! -d ./bin/log ]; then
     mkdir -p ./bin/log
 fi
 
+if [ ! -d ./bin/blogs ]; then
+    echo "创建博客目录bin/blogs"
+    mkdir -p ./bin/blogs
+fi
+
 if [ ! -f ./bin/web.xml ];then
     echo "复制web.xml"
     cp ./src/XPublic/XFrames/XResourse/xml/web.xml ./bin/web.xml
