@@ -20,9 +20,9 @@ if [ ! -d ./bin/log ]; then
     mkdir -p ./bin/log
 fi
 
-if [ ! -d ./bin/blogs ]; then
+if [ ! -d ./bin/blog ]; then
     echo "创建博客目录bin/blogs"
-    mkdir -p ./bin/blogs
+    mkdir -p ./bin/blog
 fi
 
 if [ ! -f ./bin/web.xml ];then

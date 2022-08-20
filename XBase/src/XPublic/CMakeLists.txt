@@ -14,6 +14,7 @@ add_library(publib SHARED
 )
 add_library(X::PUBLIB ALIAS publib)
 
+target_link_libraries(publib PUBLIC mysqlcppconn)
 target_link_libraries(publib PUBLIC pthread)
 target_link_libraries(publib
     PUBLIC 
@@ -53,6 +54,11 @@ target_include_directories(publib
 target_include_directories(publib
     PUBLIC 
         ${CMAKE_CURRENT_LIST_DIR}/XTools
+)
+
+target_include_directories(publib
+    PUBLIC 
+        ${CMAKE_CURRENT_LIST_DIR}/XTools/XSql
 )
 
 target_include_directories(publib

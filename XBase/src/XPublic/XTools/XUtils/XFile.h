@@ -177,10 +177,22 @@ namespace XFILETOOL
         bool dirOrFileExist(std::string dirOrFileName);
 
         /**
+         * @brief 判断是目录还是文件
+         * 
+         * @param dirOrFileName 名称
+         * @return int 
+         *  <em> 0 <em> 不存在
+         *  <em> 1 <em> 是目录
+         *  <em> 2 <em> 是文件
+         */
+        int fileOrDir(std::string dirOrFileName);
+
+        /**
          * @brief 目录中文件的数量
          * 
          * @param dirName 目录名称
          * @param number 文件数量（包括隐藏文件）
+         * @param isNeedChildDir 是否包含子文件夹
          * @return int 
          *  <em> 0 <em> 正常
          *  <em> 1 <em> 目录不存在
@@ -188,7 +200,7 @@ namespace XFILETOOL
          *  <em> 3 <em> 不是目录也不是文件
          *  <em> 4 <em> 是文件
          */
-        int dirFileNumber(std::string dirName, int number);
+        int dirFileNumber(std::string dirName, int &number, bool isNeedChildDir);
 
         /**
          * @brief 目录中文件名称

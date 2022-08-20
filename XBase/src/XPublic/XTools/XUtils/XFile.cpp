@@ -21,8 +21,8 @@
 #include <vector>
 #include <regex>    //正则表达式
 #include <unistd.h> //判断文件权限
-#include <filesystem>   //文件夹中文件数量
 #include <dirent.h> //文件夹中文件名依赖
+#include <sys/stat.h>
 
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
@@ -30,7 +30,6 @@
 #include "XLog.h"
 
 using namespace std;
-using namespace std::filesystem;
 /**
  * @brief 文件类工具命名空间，除了文件的读取写入外，还负责生成xml json  protobuff等传输协议
  * 
@@ -239,7 +238,7 @@ namespace XFILETOOL
             }
             else if (XJSONTYPE_STRING == _XJVP_temp->getType())
             {
-                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), _XJVP_temp->getStringValue(), doc.GetAllocator());
+                json.AddMember(rapidjson::StringRef(iter->first.c_str(), iter->first.length()), rapidjson::StringRef(_XJVP_temp->getStringValue().c_str(), _XJVP_temp->getStringValue().length()), doc.GetAllocator());
             }
             else if (XJSONTYPE_BOOL == _XJVP_temp->getType())
             {
@@ -285,7 +284,7 @@ namespace XFILETOOL
             }
             else if (XJSONTYPE_STRING == _XJVP_temp->getType())
             {
-                json.PushBack(rapidjson::Value(_XJVP_temp->getStringValue(), doc.GetAllocator()).Move(), doc.GetAllocator());
+                json.PushBack(rapidjson::StringRef(_XJVP_temp->getStringValue().c_str(), _XJVP_temp->getStringValue().length()), doc.GetAllocator());
             }
             else if (XJSONTYPE_BOOL == _XJVP_temp->getType())
             {
@@ -345,48 +344,53 @@ namespace XFILETOOL
         return access(dirOrFileName.c_str(), F_OK);
     }
 
-    int XFileTool::dirFileNumber(std::string dirName, int number)
+    int XFileTool::fileOrDir(std::string dirOrFileName)
     {
-        // if (!exists(dirName))		// 如果目录不存在
-        // {
-        //     return 1;
-        // }
-            
-        // path root(dirName);
-        // //不是目录
-        // if (!is_directory(root)) {
-        //     return 2;
-        // }
+        if (!dirOrFileExist(dirOrFileName))
+        {
+            return 0;
+        }
+        struct stat s1;
+        if (stat(dirOrFileName.c_str(), &s1) == 0)
+        {
+            if (s1.st_mode & S_IFDIR)
+            {
+                return 1;
+            }
+        }
+        struct stat s2;
+        if (stat(dirOrFileName.c_str(), &s2) == 0)
+        {
+            if (s2.st_mode & S_IFREG)
+            {
+                return 0;
+            }
+        }
+    }
 
-        // //不是目录也不是文件
-        // if (!is_directory(root) && is_regular_file(root))
-        // {
-        //     return 3;
-        // }
-
-        // // 如果只是单个文件，返回1
-        // if (is_regular_file(root)) {
-        //     return 4;
-        // }
-        // // DFS
-        // std::stack<path> st;
-        // st.push(root);
-        // int files = 0;
-        // while (!st.empty()) {
-        //     path folder = st.top();
-        //     st.pop();
-        //     directory_entry entry(folder);	//文件入口
-        //     directory_iterator list(entry);	//文件入口容器
-        //     for (auto& it : list) {
-        //         if (is_regular_file(it)) {	//文件的话，文件数++
-        //             ++files;
-        //         }
-        //         if (is_directory(it)) {	//目录的话，入栈
-        //             st.push(it);
-        //         }
-        //     }
-        // }
-        // return files;
+    int XFileTool::dirFileNumber(std::string dirName, int &number, bool isNeedChildDir)
+    {
+        DIR *p_dir = opendir(dirName.c_str());
+        if (p_dir == nullptr) {
+            return 1;
+        }
+        number = 0;
+    
+        struct dirent* p_file = nullptr;
+        while ((p_file = readdir(p_dir)) != nullptr) {
+            if (strcmp(p_file->d_name, ".") != 0 && strcmp(p_file->d_name, "..") != 0) {
+                std::string cur_file_name(p_file->d_name);
+                number++;
+                if (isNeedChildDir)
+                {
+                    int _i_chileNumber = 0;
+                    dirFileNumber(dirName + "/" + cur_file_name, _i_chileNumber, true);
+                    number += _i_chileNumber;
+                }
+            }
+        }
+    
+        closedir(p_dir);
         return 0;
     }
 
@@ -394,7 +398,7 @@ namespace XFILETOOL
     {
         DIR *p_dir = opendir(dirName.c_str());
         if (p_dir == nullptr) {
-            return -1;
+            return 1;
         }
     
         struct dirent* p_file = nullptr;

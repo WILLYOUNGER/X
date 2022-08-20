@@ -29,6 +29,7 @@ public:
 	{
 		m_array = new T[m_i_maxSize];
 		m_i_size = 0;
+		m_i_front = 0;
 	}
 
 	~XBlockQueue()

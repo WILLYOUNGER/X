@@ -14,7 +14,7 @@ message("--------TEST RESULT: " ${XBASE_SRC_LIST})
 
 # Add an executable with the above sources
 add_executable(XWeb
-    ${XBASE_SRC_LIST}   
+    ${XBASE_SRC_LIST}    
 )
 
 # link library
