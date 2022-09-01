@@ -40,7 +40,6 @@ cmake ..
 
 echo "编译："
 
-cd ../bin
 make 
 
 cd ../

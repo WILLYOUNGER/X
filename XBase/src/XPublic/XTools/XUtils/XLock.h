@@ -20,11 +20,13 @@
 #include <pthread.h>
 #include <semaphore.h>
 
+#include "XBaseStruct.h"
+
 /**
  * @brief 信号量锁
  * 
  */
-class Sem
+class Sem : public noncopyable
 {
 public:
 	Sem()
@@ -57,7 +59,7 @@ private:
  * @brief 互斥锁
  * 
  */
-class Locker
+class Locker : public noncopyable
 {
 public:
 	Locker()
@@ -92,10 +94,33 @@ private:
 };
 
 /**
+ * @brief 栈上对象锁
+ * 
+ */
+class LockGuard : public noncopyable
+{
+public:
+	LockGuard(pthread_mutex_t &mutex)
+	{
+		m_mutex_temp_ptr = &mutex;
+		pthread_mutex_lock(m_mutex_temp_ptr);
+	}
+
+	~LockGuard()
+	{
+		pthread_mutex_unlock(m_mutex_temp_ptr);
+	}
+private:
+	LockGuard(){ };
+private:
+	pthread_mutex_t* m_mutex_temp_ptr;
+};
+
+/**
  * @brief 条件锁
  * 
  */
-class Cond
+class Cond : public noncopyable
 {
 public:
 	Cond()

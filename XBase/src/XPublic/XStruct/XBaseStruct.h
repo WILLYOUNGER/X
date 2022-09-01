@@ -13,6 +13,8 @@
 *  2022/8/20   | 1.0.0.0   | wangxinxiao    | Create file
 *-
 */
+#ifndef X_PUBLIC_STRUCT_BASESTRUCT_H
+#define X_PUBLIC_STRUCT_BASESTRUCT_H
 
 class noncopyable
 {
@@ -25,3 +27,4 @@ class noncopyable
   ~noncopyable() = default;
 };
 
+#endif

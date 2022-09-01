@@ -6,6 +6,11 @@
 #include "XFile.h"
 #include "XMysql.h"
 //#include <Config.h>
+#include "muduo/net/EventLoop.h"
+
+#include "Echo.h"
+
+#include <unistd.h>
 
 using namespace std;
 using namespace XNETBASE;
@@ -26,7 +31,7 @@ int main(int argc, char* argv[])
 	// 	sleep(1000);
 	// }
 	
-    XMYSQLLINSTANCE()->init("123", 3306, "", "", "XX");
+    XMYSQLLINSTANCE()->init("ssh.xinxiao.wang", 26666, "will", "pmjswjk", "XX");
 
     XConnectionPtr _connectPtr_temp = XMYSQLLINSTANCE()->getConnection();
 
@@ -45,6 +50,13 @@ int main(int argc, char* argv[])
             XLOG_INFO("id, password, phone, email \n%d, %s, %s, %s", id, label.c_str(), phone.c_str(), email.c_str());
         }
 	}, nullptr);
+
+	XLOG_INFO("pid = %d", getpid());
+	muduo::net::EventLoop loop;
+	muduo::net::InetAddress listenAddr(2007);
+	EchoServer server(&loop, listenAddr);
+	server.start();
+	loop.loop();	
 
 	return 0;
 }

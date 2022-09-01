@@ -30,3 +30,8 @@ target_include_directories(test
     PUBLIC 
         ${CMAKE_CURRENT_LIST_DIR}/XUserServlet
 )
+
+target_include_directories(test
+    PUBLIC 
+        ${CMAKE_CURRENT_LIST_DIR}/XEchoServer
+)
