@@ -111,14 +111,14 @@ void NetUtils::setFdCloseType(XNETSTRUCT::XSocket fd, int isCloseNow, int time)
 
 namespace XNETSTRUCT {
 
-	static unsigned int g_i_time = (unsigned int)time(0);
+	static unsigned int g_i_time = static_cast<unsigned int>(time(0));
 
 int PUB_getRandInt(int begin, int end)
 {
     if (time(0) != g_i_time)
     {
-        g_i_time = (unsigned int)time(0);
-        srand((unsigned int)g_i_time);
+        g_i_time = static_cast<unsigned int>(time(0));
+        srand(static_cast<unsigned int>(g_i_time));
     }
     int _i_res = begin + rand() % (end - begin + 1);
     
@@ -130,9 +130,9 @@ float PUB_getRandFloat(float begin, float end)
 {
     if (time(0) != g_i_time)
     {
-        srand((unsigned int)time(0));
+        srand(static_cast<unsigned int>(time(0)));
     }
-    float _f_res = begin + (float)(rand()) / RAND_MAX * (end - begin);
+    float _f_res = begin + static_cast<float> ((rand())) / static_cast<float>(RAND_MAX) * (end - begin);
     
     return _f_res;
 }
@@ -160,7 +160,7 @@ void PUB_getNowTime(long &s, long &ms)
             = std::chrono::duration_cast<std::chrono::microseconds>(duration_since_epoch).count(); // 将时长转换为微秒数
     time_t seconds_since_epoch = microseconds_since_epoch / 1000000; // 将时长转换为秒数
     std::tm current_time = *std::localtime(&seconds_since_epoch); // 获取当前时间（精确到秒）
-    time_t tm_microsec = microseconds_since_epoch % 1000; // 当前时间的微妙数
+    //time_t tm_microsec = microseconds_since_epoch % 1000; // 当前时间的微妙数
     time_t tm_millisec = microseconds_since_epoch / 1000 % 1000; // 当前时间的毫秒数
     
     s = current_time.tm_sec;

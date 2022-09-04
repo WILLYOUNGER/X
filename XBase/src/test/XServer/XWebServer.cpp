@@ -52,19 +52,19 @@ bool XWebServer::WriteCallback(XSocket epollfd, XSocket socket)
         {
             struct iovec _iv[2];
             int _iv_count;
-            char* _head = (char*)malloc(temp.getHeadString().size() * sizeof(char));
+            char* _head = static_cast<char*>(malloc(temp.getHeadString().size() * sizeof(char)));
             strncpy(_head, temp.getHeadString().c_str(), temp.getHeadString().size());
             _iv[0].iov_base = _head;
             _iv[0].iov_len = temp.getHeadString().size();
             _iv[1].iov_base = temp.getFileAddress();
             _iv[1].iov_len = temp.getContentLength();
             _iv_count = 2;
-            int bytes_to_send = _iv[0].iov_len + _iv[1].iov_len;
-            int bytes_have_send = 0;
+            //int bytes_to_send = static_cast<int>(_iv[0].iov_len) + static_cast<int>(_iv[1].iov_len);
+            //int bytes_have_send = 0;
 
             _head[temp.getHeadString().size()] = '\0';
 
-            int templen = writev(socket, _iv, _iv_count);
+            int templen = static_cast<int>(writev(socket, _iv, _iv_count));
             if (templen < 0)
             {
                 if (errno == EAGAIN)

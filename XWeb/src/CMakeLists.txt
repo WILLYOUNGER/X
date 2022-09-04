@@ -51,7 +51,7 @@ target_link_libraries(XWeb
     PUBLIC 
         rt)
 
-target_include_directories(test
+target_include_directories(XWeb
     PUBLIC 
         ${Muduo_INCLUDE_DIR}/
 )

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-PROJECT (XBase VERSION 1.0.0)
+PROJECT (XMuduo VERSION 1.0.0)
 
 configure_file(Config.h.in Config.h)
 

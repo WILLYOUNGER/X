@@ -41,10 +41,10 @@ void XHttp::process(XMsgPtr &msg)
 	m_msg = msg;
 	m_read_now = 0;
 	m_line_begin = 0;
-	m_content_length == 0;
+	m_content_length = 0;
 	m_request.clear();
 	m_response.clear();
-	m_read_end = msg->getContent().length();
+	m_read_end = static_cast<int>(msg->getContent().length());
 	m_method = GET;
 	m_msg_str = msg->getContent();
 	m_check_state = CHECK_STATE_REQUESTLINE;
@@ -78,7 +78,6 @@ HTTP_CODE XHttp::generateRequest()
 	LINE_STATUS line_status = LINE_OK;
 
 	HTTP_CODE ret = NO_REQUEST;
-	string now_line;
 
 	while (((m_check_state == CHECK_STATE_CONTENT) && (line_status == LINE_OK)) || (line_status = parse_line()) == LINE_OK)
 	{
@@ -117,7 +116,7 @@ HTTP_CODE XHttp::generateRequest()
 				{
 					return GET_REQUEST;;
 				}
-				line_status == LINE_OPEN;
+				line_status = LINE_OPEN;
 				break;
 			}
 			default:
@@ -202,7 +201,7 @@ HTTP_CODE XHttp::parse_request_header(string &str)
 		m_request.setAttribute(key, str);
 		if (key == "Content-Length")
 		{
-			m_content_length = atol(str.c_str());
+			m_content_length = static_cast<int>(atol(str.c_str()));
 		}
 		else if (key == "Connection")
 		{
@@ -216,11 +215,12 @@ HTTP_CODE XHttp::parse_request_header(string &str)
 			}
 		}
 	}
+	return NO_REQUEST;
 }
 
 XNETSTRUCT::HTTP_CODE XHttp::parse_request_content(std::string &str)
 {
-	if (str.length() != m_content_length)
+	if (static_cast<int>(str.length()) != m_content_length)
 	{
 		return NO_REQUEST;
 	}
@@ -330,6 +330,7 @@ bool XHttp::xml2map()
     };
 
     myDocument->Clear();
+	return true;
 }
 
 void XHttp::sendResponse()
@@ -475,29 +476,29 @@ void XHttp::do_request(string str)
 
 
 	    int fd = open(fullPath.c_str(), O_RDONLY);
-	    m_response.setContentLength(_file_stat.st_size);
+	    m_response.setContentLength(static_cast<int>(_file_stat.st_size));
 	    if (_type == -1)
 	    {
 	    	m_response.setHttpCode(FILE_REQUEST);
-	    	char* _tmp = (char *)mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
 	    	m_response.setFileAddress(_tmp);
 	    }
 	    else if (_type == 1)
 	    {
 	    	m_response.setHttpCode(ICO_REQUEST);
-	    	char* _tmp = (char *)mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
 	    	m_response.setFileAddress(_tmp);
 	    }
 	    else if (_type == 2)
 	    {
 	    	m_response.setHttpCode(JPG_REQUEST);
-	    	char* _tmp = (char *)mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
 	    	m_response.setFileAddress(_tmp);
 	    }
 	    else if (_type == 3)
 	    {
 	    	m_response.setHttpCode(GIF_REQUEST);
-	    	char* _tmp = (char *)mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
 	    	m_response.setFileAddress(_tmp);
 	    }
 	    close(fd);

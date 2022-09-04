@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.5)
 # Create an executable
 ############################################################
 
-ADD_SUBDIRECTORY(test)
+ADD_SUBDIRECTORY(XMuduo)
 ADD_SUBDIRECTORY(XPublic)
 
 message("--------Cur Src Dir: " ${CMAKE_CURRENT_LIST_DIR})
@@ -24,29 +24,29 @@ message(STATUS ${muduo_base})
 message(STATUS ${muduo_net})
 
 # Add an executable with the above sources
-add_executable(XBase
+add_executable(XMuduo
     ${XBASE_SRC_LIST}   
 )
 
 # link library
-target_link_libraries(XBase
+target_link_libraries(XMuduo
     PUBLIC 
         X::TEST
 )
 
-target_link_libraries(XBase 
+target_link_libraries(XMuduo 
     PUBLIC 
         ${muduo_base})
 
-target_link_libraries(XBase 
+target_link_libraries(XMuduo 
     PUBLIC 
         ${muduo_net})
 
-target_link_libraries(XBase 
+target_link_libraries(XMuduo 
     PUBLIC 
         rt)
 
-target_include_directories(XBase
+target_include_directories(XMuduo
     PUBLIC 
         ${Muduo_INCLUDE_DIR}/
 )

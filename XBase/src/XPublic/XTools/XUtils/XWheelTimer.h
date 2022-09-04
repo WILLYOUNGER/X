@@ -41,14 +41,14 @@ public:
 class XTimerNode
 {
 public:
-    XTimerNode(int rot, int st, TimerNodeInfoBase _client, std::function<void(TimerNodeInfoBase)> _func):rotation(rot), slot_time(st), client(_client), prev(nullptr), next(nullptr), _cb_func(_func) {}
+    XTimerNode(int rot, int st, TimerNodeInfoBase _client, std::function<void(TimerNodeInfoBase)> _func):rotation(rot), slot_time(st), _cb_func(_func), client(_client), prev(nullptr), next(nullptr) {}
 public:
     int rotation;
     int slot_time;
-    std::function<void(TimerNodeInfoBase)> _cb_func;
+    std::function<void(TimerNodeInfoBase)> _cb_func { nullptr };
     TimerNodeInfoBase client;
-    XTimerNode* prev;
-    XTimerNode* next;
+    XTimerNode* prev { nullptr };
+    XTimerNode* next { nullptr };
 };
 
 class XWheelTimer

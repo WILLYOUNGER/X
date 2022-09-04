@@ -106,7 +106,7 @@ template<typename T, typename E>
 bool XPthreadPool<T, E>::append(T request)
 {
 	m_locker_mutex.lock();
-	if (m_listT_workqueue.size() > m_i_maxRequests)
+	if (static_cast<int>(m_listT_workqueue.size()) > m_i_maxRequests)
 	{
 		m_locker_mutex.unlock();
 		return false;
@@ -119,7 +119,7 @@ bool XPthreadPool<T, E>::append(T request)
 template<typename T, typename E>
 void* XPthreadPool<T, E>::worker(void* arg)
 {
-	XPthreadPool* _xpthreadPool_pool = (XPthreadPool*) arg;
+	XPthreadPool* _xpthreadPool_pool = static_cast<XPthreadPool*>(arg);
 	_xpthreadPool_pool->run();
 	return _xpthreadPool_pool;
 }

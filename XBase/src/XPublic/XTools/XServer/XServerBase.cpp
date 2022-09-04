@@ -60,6 +60,7 @@ void XServerBase::ReadCallback(XMsgPtr msg)
 bool XServerBase::WriteCallback(XSocket epollfd, XSocket socket)
 {
     XLOG_INFO("send a msg to a client");
+    return true;
 }
 
 void XServerBase::TimeOutCallback(XSocket socket)

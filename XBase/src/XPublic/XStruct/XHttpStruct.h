@@ -24,6 +24,7 @@ typedef enum _method {
 } METHOD;
 
 typedef enum _http_code {
+	CODE_NONE,
 	NO_REQUEST,
 	GET_REQUEST,
 	BAD_REQUEST,
@@ -76,7 +77,7 @@ public:
 
 	int getAttributeNum()
 	{
-		return m_mapStrStr_attribute.size();
+		return static_cast<int>(m_mapStrStr_attribute.size());
 	}
 private:
 	METHOD m_method_method;
@@ -157,7 +158,7 @@ public:
 	void setContent(std::string content)
 	{
 		m_b_contentIsFile = false;
-		m_i_contentLength = content.length();
+		m_i_contentLength = static_cast<int>(content.length());
 		m_str_content = content;
 	}
 

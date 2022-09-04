@@ -19,7 +19,7 @@
 
 namespace XMATHTOOL {
 
-const float cg_f_pai = 3.1415926;
+const double cg_f_pai = 3.1415926;
 
 /**
 * @brief 求两点间的距离

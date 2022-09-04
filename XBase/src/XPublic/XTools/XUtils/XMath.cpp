@@ -6,7 +6,7 @@ namespace XMATHTOOL {
 
 float PUB_twoPointDistance(float x0, float y0, float x1, float y1)
 {
-    return sqrtf( pow(x0 - x1, 2) + pow(y0 - y1, 2) );
+    return sqrtf(static_cast<float>(pow(x0 - x1, 2) + pow(y0 - y1, 2)) );
 }
 
 bool PUB_cutPosByDistanceFloat(float x0, float y0, float x1, float y1, float distance, float &resX, float &resY)
@@ -64,10 +64,10 @@ bool PUB_cutPosByDistanceFloat(float x0, float y0, float x1, float y1, float dis
         float _f_b = (x0 * (y1 - y0) - y0 * (x1 - x0)) / (x0 - x1);
         float _f_k = (y0 - y1) / (x0 - x1);
         float _f_pow2Distance = distance * distance;
-        float _f_A = (pow(_f_k, 2) + 1);
+        float _f_A = (static_cast<float>(pow(_f_k, 2) + 1));
         float _f_B = 2 * _f_k * (_f_b - y0) - 2 * x0;
-        float _f_C = x0 * x0 + pow((_f_b - y0), 2) - _f_pow2Distance;
-        float _f_delta = pow(_f_B, 2) - 4 * _f_A * _f_C;
+        float _f_C = static_cast<float>(x0 * x0 + pow(static_cast<float>((_f_b - y0)), 2) - _f_pow2Distance);
+        float _f_delta = static_cast<float>(pow(static_cast<float>(_f_B), 2) - 4 * _f_A * _f_C);
         if (x1 > x0)
         {
             resX = (-_f_B + sqrtf(_f_delta)) / (2 * _f_A);
@@ -85,8 +85,8 @@ bool PUB_cutPosByDistanceInt(float x0, float y0, float x1, float y1, float dista
 {
     float _f_resX, _f_resY;
     bool _b_res = PUB_cutPosByDistanceFloat(x0, y0, x1, y1, distance, _f_resX, _f_resY);
-    resX = _f_resX;
-    resY = _f_resY;
+    resX = static_cast<int>(_f_resX);
+    resY = static_cast<int>(_f_resY);
 
     return _b_res;
 }

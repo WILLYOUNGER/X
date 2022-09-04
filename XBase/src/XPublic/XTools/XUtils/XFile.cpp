@@ -89,7 +89,7 @@ namespace XFILETOOL
 
     int XJsonTool::openJsonByFile(std::string jsonfileName, XJsonPtr xjson)
     {
-
+        return 0;
     }
 
     int XJsonTool::jsonToString(XJsonPtr xjson, std::string &str)
@@ -111,12 +111,12 @@ namespace XFILETOOL
 
     bool XJsonTool::saveFileByString(std::string fileName, std::string json)
     {
-
+        return false;
     }
 
     bool XJsonTool::saveFileByJson(std::string fileName, XJsonPtr xjson)
     {
-        
+        return false;
     }
 
     int XJsonTool::buildXJson(rapidjson::Value &json, XJsonPtr xjson)
@@ -172,7 +172,7 @@ namespace XFILETOOL
 
     int XJsonTool::parseList(rapidjson::Value &json, std::list<XJsonValuePtr> &list)
     {
-        for (int i = 0; i < json.Size(); i++)
+        for (int i = 0; i < static_cast<int>(json.Size()); i++)
         {
             XJsonValuePtr _xJVP_value = make_shared<XJsonValue>();
             if (json[i].IsBool())
@@ -363,9 +363,10 @@ namespace XFILETOOL
         {
             if (s2.st_mode & S_IFREG)
             {
-                return 0;
+                return 2;
             }
         }
+        return -1;
     }
 
     int XFileTool::dirFileNumber(std::string dirName, int &number, bool isNeedChildDir)
@@ -406,7 +407,7 @@ namespace XFILETOOL
             if (strcmp(p_file->d_name, ".") != 0 && strcmp(p_file->d_name, "..") != 0) {
                 std::string cur_file_name(p_file->d_name);
                 bool ret = false;
-                for (int i = 0; i < suffix.size(); i++)
+                for (int i = 0; i < static_cast<int>(suffix.size()); i++)
                 {
                     std::regex file_reg((".+\\." + suffix[i]).c_str());
                     ret = std::regex_match(cur_file_name, file_reg);

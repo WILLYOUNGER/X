@@ -429,7 +429,7 @@ namespace XSQLTOOL
             }
             m_locker_queue.lock();
             // 连接数量没有到达上限，继续创建新的连接
-            if (m_uI_connectionNum < m_i_maxSize)
+            if (m_uI_connectionNum < static_cast<unsigned int>(m_i_maxSize))
             {
                 XConnection* _XConnection_conn_ptr = new XConnection();
                 _XConnection_conn_ptr->connect(m_str_ip, m_short_port, m_str_userName, m_str_password, m_str_dbname);
@@ -450,7 +450,7 @@ namespace XSQLTOOL
             this_thread::sleep_for(chrono::seconds(m_i_maxIdleTime));
             m_locker_queue.lock();
             // 扫描整个队列，释放多余的连接
-            while (m_uI_connectionNum > m_i_initSize)
+            while (m_uI_connectionNum > static_cast<unsigned int>(m_i_initSize))
             {
                 XConnection* _connection_temp; 
                 if (m_queueXConPtr_connection_ptr->front(_connection_temp))

@@ -181,6 +181,7 @@ namespace XFILETOOL
          * 
          * @param dirOrFileName 名称
          * @return int 
+         *  <em> -1 <em> 出错
          *  <em> 0 <em> 不存在
          *  <em> 1 <em> 是目录
          *  <em> 2 <em> 是文件

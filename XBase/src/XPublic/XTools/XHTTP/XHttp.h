@@ -67,7 +67,7 @@ private:
 			pos++;
 		}
 		str = str.substr(pos, str.length() - pos);
-		pos = str.find(_sig);
+		pos = static_cast<int>(str.find(_sig));
 		if (pos == -1)
 		{
 			res = str.substr(0, str.length());

@@ -176,6 +176,7 @@ namespace XUTILSTOOL
                 }
             }
         }
-        m_curSlot = ++m_curSlot % N;
+        m_curSlot = m_curSlot+1;
+        m_curSlot = m_curSlot % N;
     }
 };

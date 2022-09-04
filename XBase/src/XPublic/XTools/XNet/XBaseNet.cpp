@@ -45,14 +45,14 @@ void XServer::beginListen()
 	memset(&address, 0, sizeof(address));
 	address.sin_family = AF_INET;
 	inet_pton(AF_INET, m_str_ip.c_str(), &address.sin_addr);
-	address.sin_port = htons(m_i_port);
+	address.sin_port = htons(static_cast<uint16_t>(m_i_port));
 
 	m_xsocket_sockfd = socket(PF_INET, SOCK_STREAM, 0);
 	assert(m_xsocket_sockfd >= 0);
 
 	NETUTILS->setFdCloseType(m_xsocket_sockfd, 1, 1);
 
-	int ret = bind(m_xsocket_sockfd, (struct sockaddr*) &address, sizeof(address) );
+	int ret = bind(m_xsocket_sockfd, reinterpret_cast<struct sockaddr*>(&address), sizeof(address) );
 	assert(ret != -1);
 
 	ret = listen(m_xsocket_sockfd, m_i_maxConnectNum);
@@ -72,19 +72,18 @@ void XServer::beginListen()
 	setsockopt(m_xsocket_sockfd, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
 
 	m_b_stop = false;
-	pthread_create(&m_pthread_pthreadId, NULL, loop, (void*)this);
+	pthread_create(&m_pthread_pthreadId, NULL, loop, static_cast<void*> (this));
 }
 
 void XServer::sig_handler(int sig)
 {
 	int save_errno = errno;
-	int msg = sig;
 	errno = save_errno;
 }
 
 void* XServer::loop(void* _this)
 {
-	XServer* object = (XServer*)_this;
+	XServer* object = static_cast<XServer*> (_this);
 	object->run();
 	return _this;
 }
@@ -102,7 +101,7 @@ void XServer::run()
 			{
 				struct sockaddr_in client_address;
 				socklen_t client_addresslength = sizeof(client_address);
-				XSocket connfd = accept(m_xsocket_sockfd, (struct sockaddr*) &client_address, &client_addresslength);
+				XSocket connfd = accept(m_xsocket_sockfd, reinterpret_cast<struct sockaddr*>(&client_address), &client_addresslength);
 				if (connfd < 0)
 				{
 					XLOG_ERROR("error:%d", errno);
@@ -150,7 +149,7 @@ void XServer::run()
 						{
 							break;
 						}
-						_read_bytes_num = recv(sockfd, _read_buf + _read_bytes_idx, READ_BUFFER_SIZE - _read_bytes_idx, 0);
+						_read_bytes_num = static_cast<int>(recv(sockfd, _read_buf + _read_bytes_idx, READ_BUFFER_SIZE - _read_bytes_idx, 0));
 						if (_read_bytes_num == -1)
 						{
 							if (errno == EAGAIN || errno == EWOULDBLOCK)
@@ -225,7 +224,7 @@ void XServer::adjustTimer(XSocket connfd, XTimerNode address)
 
 void XServer::delTimer(XSocket connfd, XTimerNode timerNode)
 {
-	auto timeOutCb = bind(&XServer::TimeOutCB,this,std::placeholders::_1);
+	//auto timeOutCb = bind(&XServer::TimeOutCB,this,std::placeholders::_1);
     m_wheelTImer_timer.deleteTimer(m_socketTimerNode_timerNodes[connfd]);
 }
 
@@ -244,7 +243,7 @@ void XClient::beginConnect()
 	memset(&m_sockaddr_address, 0, sizeof(m_sockaddr_address));
 	m_sockaddr_address.sin_family = AF_INET;
 	inet_pton(AF_INET, m_str_ip.c_str(), &m_sockaddr_address.sin_addr);
-	m_sockaddr_address.sin_port = htons(m_i_port);
+	m_sockaddr_address.sin_port = htons(static_cast<uint16_t>(m_i_port));
 
 	m_xsocket_sockfd = socket(PF_INET, SOCK_STREAM, 0);
 	assert(m_xsocket_sockfd >= 0);
@@ -253,7 +252,7 @@ void XClient::beginConnect()
 
 	m_b_stop = false;
 	m_b_connected  = false;
-	pthread_create(&m_pthread_pthreadId, NULL, loop, (void*)this);
+	pthread_create(&m_pthread_pthreadId, NULL, loop, static_cast<void*> (this));
 }
 
 void XClient::sendMessage(XMsgPtr _msg)
@@ -272,7 +271,7 @@ void XClient::stopConnect()
 
 void* XClient::loop(void* _this)
 {
-	XClient* _client = (XClient*) _this;
+	XClient* _client = static_cast<XClient*> ( _this);
 	_client->run();
 	return _this;
 }
@@ -313,7 +312,7 @@ void XClient::run()
 							{
 								break;
 							}
-							_read_bytes_num = recv(m_xsocket_sockfd, _read_buf + _read_bytes_idx, READ_BUFFER_SIZE - _read_bytes_idx, 0);
+							_read_bytes_num = static_cast<int>(recv(m_xsocket_sockfd, _read_buf + _read_bytes_idx, READ_BUFFER_SIZE - _read_bytes_idx, 0));
 							if (_read_bytes_num < 0)
 							{
 								if (errno == EAGAIN || errno == EWOULDBLOCK)
@@ -356,7 +355,7 @@ void XClient::run()
 		}
 		else
 		{
-			if (connect(m_xsocket_sockfd, (struct sockaddr*)&m_sockaddr_address, sizeof(m_sockaddr_address)) >= 0)
+			if (connect(m_xsocket_sockfd, reinterpret_cast<struct sockaddr*>(&m_sockaddr_address), sizeof(m_sockaddr_address)) >= 0)
 			{
 				if (m_xsConCB_connectCb)
 				{
