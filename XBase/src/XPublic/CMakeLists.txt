@@ -5,7 +5,24 @@ cmake_minimum_required(VERSION 3.5)
 ############################################################
 
 message("--------Cur Src Dir: " ${CMAKE_CURRENT_LIST_DIR})
-file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/*/*.cpp)
+
+if(LINUX)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XFrames/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XHTTP/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XServer/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XNet/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XUtils/XUtils.cpp)
+endif()
+
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XGame/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XStruct/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XLOG/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XPthread/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XSql/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XUtils/*.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XUtils/XFile.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XUtils/XMath.cpp)
+file(GLOB_RECURSE XPUBLIC_SRC_LIST ${CMAKE_CURRENT_LIST_DIR}/XTools/XUtils/XWheelTimer.cpp)
 message("--------TEST RESULT: " ${XPUBLIC_SRC_LIST})
 
 
@@ -14,12 +31,34 @@ add_library(publib SHARED
 )
 add_library(X::PUBLIB ALIAS publib)
 
+if(LINUX)
 target_link_libraries(publib PUBLIC mysqlcppconn)
+endif()
+
 target_link_libraries(publib PUBLIC pthread)
 target_link_libraries(publib
     PUBLIC 
         X::THIRD
 )
+
+if(LINUX)
+
+target_include_directories(publib
+    PUBLIC 
+        ${CMAKE_CURRENT_LIST_DIR}/XTools/XHTTP
+)
+
+target_include_directories(publib
+    PUBLIC 
+        ${CMAKE_CURRENT_LIST_DIR}/XTools/XNet
+)
+
+target_include_directories(publib
+    PUBLIC 
+        ${CMAKE_CURRENT_LIST_DIR}/XTools/XServer
+)
+
+endif()
 
 target_include_directories(publib
     PUBLIC 
@@ -63,17 +102,7 @@ target_include_directories(publib
 
 target_include_directories(publib
     PUBLIC 
-        ${CMAKE_CURRENT_LIST_DIR}/XTools/XHTTP
-)
-
-target_include_directories(publib
-    PUBLIC 
         ${CMAKE_CURRENT_LIST_DIR}/XTools/XLog
-)
-
-target_include_directories(publib
-    PUBLIC 
-        ${CMAKE_CURRENT_LIST_DIR}/XTools/XNet
 )
 
 target_include_directories(publib
@@ -84,9 +113,4 @@ target_include_directories(publib
 target_include_directories(publib
     PUBLIC 
         ${CMAKE_CURRENT_LIST_DIR}/XTools/XUtils
-)
-
-target_include_directories(publib
-    PUBLIC 
-        ${CMAKE_CURRENT_LIST_DIR}/XTools/XServer
 )

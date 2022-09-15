@@ -19,7 +19,7 @@
 #ifndef _PUB_BASE_XFINITESTATEMACHINE_H
 #define _PUB_BASE_XFINITESTATEMACHINE_H
 
-#include <string.h>
+#include <string>
 #include <list>
 #include <unordered_map>
 #include <memory>
