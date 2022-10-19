@@ -19,18 +19,110 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294D0D631D0D56D500F7F5D4 /* CoreText.framework */; };
-		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
-		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
-		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
-		46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
+		487CD91C28D4BFD60079B06D /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD91B28D4BFD60079B06D /* StartScene.cpp */; };
+		487CD91D28D4BFD60079B06D /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD91B28D4BFD60079B06D /* StartScene.cpp */; };
+		487CD92128D4C1AB0079B06D /* XTCSInfoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD91F28D4C1AB0079B06D /* XTCSInfoManager.cpp */; };
+		487CD92228D4C1AB0079B06D /* XTCSInfoManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD91F28D4C1AB0079B06D /* XTCSInfoManager.cpp */; };
+		487CD92528D4C1CD0079B06D /* XTCSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92328D4C1CD0079B06D /* XTCSGameScene.cpp */; };
+		487CD92628D4C1CD0079B06D /* XTCSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92328D4C1CD0079B06D /* XTCSGameScene.cpp */; };
+		487CD92A28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */; };
+		487CD92B28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */; };
+		48B1972A28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */; };
+		48B1972B28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */; };
+		48BA2A1328DFF6ED000078F5 /* XTCSMap.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75828DEFCB200E73118 /* XTCSMap.hpp */; };
+		48BA2A1428DFF6F9000078F5 /* XTCSDataStruct.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75428DEF92B00E73118 /* XTCSDataStruct.hpp */; };
+		48BA2A1528DFF6FE000078F5 /* XTCSInfoManager.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92028D4C1AB0079B06D /* XTCSInfoManager.hpp */; };
+		48BA2A1628DFF709000078F5 /* XTCSHomeScene.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92928D8C3390079B06D /* XTCSHomeScene.hpp */; };
+		48BA2A1728DFF711000078F5 /* XTCSGameScene.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92428D4C1CD0079B06D /* XTCSGameScene.hpp */; };
+		48BA2A1C28E04B76000078F5 /* XTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BA2A1928E04B76000078F5 /* XTime.cpp */; };
+		48BA2A1D28E04B76000078F5 /* XTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BA2A1928E04B76000078F5 /* XTime.cpp */; };
+		48BED66228D9E5CF00E73118 /* res_tcs_v1 in Resources */ = {isa = PBXBuildFile; fileRef = 48BED66128D9E5CF00E73118 /* res_tcs_v1 */; };
+		48BED66328D9E5CF00E73118 /* res_tcs_v1 in Resources */ = {isa = PBXBuildFile; fileRef = 48BED66128D9E5CF00E73118 /* res_tcs_v1 */; };
+		48BED67D28DCA07F00E73118 /* XTCSSnake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED67B28DCA07F00E73118 /* XTCSSnake.cpp */; };
+		48BED67E28DCA07F00E73118 /* XTCSSnake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED67B28DCA07F00E73118 /* XTCSSnake.cpp */; };
+		48BED68128DCA36400E73118 /* XTCSSnake.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED67C28DCA07F00E73118 /* XTCSSnake.hpp */; };
+		48BED6B728DCA6D100E73118 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B128DCA6D100E73118 /* tinyxml.cpp */; };
+		48BED6B828DCA6D100E73118 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B128DCA6D100E73118 /* tinyxml.cpp */; };
+		48BED6B928DCA6D100E73118 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B228DCA6D100E73118 /* tinystr.cpp */; };
+		48BED6BA28DCA6D100E73118 /* tinystr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B228DCA6D100E73118 /* tinystr.cpp */; };
+		48BED6BB28DCA6D100E73118 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B328DCA6D100E73118 /* tinyxmlparser.cpp */; };
+		48BED6BC28DCA6D100E73118 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B328DCA6D100E73118 /* tinyxmlparser.cpp */; };
+		48BED6BD28DCA6D100E73118 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B628DCA6D100E73118 /* tinyxmlerror.cpp */; };
+		48BED6BE28DCA6D100E73118 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6B628DCA6D100E73118 /* tinyxmlerror.cpp */; };
+		48BED6D728DCA70200E73118 /* internal in Resources */ = {isa = PBXBuildFile; fileRef = 48BED6C028DCA70200E73118 /* internal */; };
+		48BED6D828DCA70200E73118 /* internal in Resources */ = {isa = PBXBuildFile; fileRef = 48BED6C028DCA70200E73118 /* internal */; };
+		48BED6D928DCA70200E73118 /* error in Resources */ = {isa = PBXBuildFile; fileRef = 48BED6C128DCA70200E73118 /* error */; };
+		48BED6DA28DCA70200E73118 /* error in Resources */ = {isa = PBXBuildFile; fileRef = 48BED6C128DCA70200E73118 /* error */; };
+		48BED6E628DCA74800E73118 /* XNetStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6E028DCA74800E73118 /* XNetStruct.cpp */; };
+		48BED6E728DCA74800E73118 /* XNetStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6E028DCA74800E73118 /* XNetStruct.cpp */; };
+		48BED6E828DCA74800E73118 /* XHttpStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6E228DCA74800E73118 /* XHttpStruct.cpp */; };
+		48BED6E928DCA74800E73118 /* XHttpStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6E228DCA74800E73118 /* XHttpStruct.cpp */; };
+		48BED6EA28DCA74800E73118 /* XUtilsStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6E328DCA74800E73118 /* XUtilsStruct.cpp */; };
+		48BED6EB28DCA74800E73118 /* XUtilsStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6E328DCA74800E73118 /* XUtilsStruct.cpp */; };
+		48BED6EF28DCA77100E73118 /* XFiniteStateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6ED28DCA77100E73118 /* XFiniteStateMachine.cpp */; };
+		48BED6F028DCA77100E73118 /* XFiniteStateMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6ED28DCA77100E73118 /* XFiniteStateMachine.cpp */; };
+		48BED6F528DCA7AF00E73118 /* web.xml in Resources */ = {isa = PBXBuildFile; fileRef = 48BED6F428DCA7AF00E73118 /* web.xml */; };
+		48BED6F628DCA7AF00E73118 /* web.xml in Resources */ = {isa = PBXBuildFile; fileRef = 48BED6F428DCA7AF00E73118 /* web.xml */; };
+		48BED6FB28DCA7BD00E73118 /* XServletDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6F728DCA7BD00E73118 /* XServletDefine.cpp */; };
+		48BED6FC28DCA7BD00E73118 /* XServletDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6F728DCA7BD00E73118 /* XServletDefine.cpp */; };
+		48BED6FD28DCA7BD00E73118 /* XServlet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6FA28DCA7BD00E73118 /* XServlet.cpp */; };
+		48BED6FE28DCA7BD00E73118 /* XServlet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED6FA28DCA7BD00E73118 /* XServlet.cpp */; };
+		48BED70828DCA7EA00E73118 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70028DCA7E900E73118 /* test.txt */; };
+		48BED70928DCA7EA00E73118 /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70028DCA7E900E73118 /* test.txt */; };
+		48BED70A28DCA7EA00E73118 /* login.gif in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70128DCA7E900E73118 /* login.gif */; };
+		48BED70B28DCA7EA00E73118 /* login.gif in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70128DCA7E900E73118 /* login.gif */; };
+		48BED70C28DCA7EA00E73118 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70228DCA7E900E73118 /* index.html */; };
+		48BED70D28DCA7EA00E73118 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70228DCA7E900E73118 /* index.html */; };
+		48BED70E28DCA7EA00E73118 /* xxx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70328DCA7E900E73118 /* xxx.jpg */; };
+		48BED70F28DCA7EA00E73118 /* xxx.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70328DCA7E900E73118 /* xxx.jpg */; };
+		48BED71028DCA7EA00E73118 /* imgs in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70428DCA7E900E73118 /* imgs */; };
+		48BED71128DCA7EA00E73118 /* imgs in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70428DCA7E900E73118 /* imgs */; };
+		48BED71228DCA7EA00E73118 /* xxx.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70528DCA7E900E73118 /* xxx.mp4 */; };
+		48BED71328DCA7EA00E73118 /* xxx.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70528DCA7E900E73118 /* xxx.mp4 */; };
+		48BED71428DCA7EA00E73118 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70628DCA7EA00E73118 /* favicon.ico */; };
+		48BED71528DCA7EA00E73118 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70628DCA7EA00E73118 /* favicon.ico */; };
+		48BED71628DCA7EA00E73118 /* baidu.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70728DCA7EA00E73118 /* baidu.html */; };
+		48BED71728DCA7EA00E73118 /* baidu.html in Resources */ = {isa = PBXBuildFile; fileRef = 48BED70728DCA7EA00E73118 /* baidu.html */; };
+		48BED72428DCA84A00E73118 /* XPthreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72128DCA84A00E73118 /* XPthreadPool.cpp */; };
+		48BED72528DCA84A00E73118 /* XPthreadPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72128DCA84A00E73118 /* XPthreadPool.cpp */; };
+		48BED72828DCA86300E73118 /* XServerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72628DCA86300E73118 /* XServerBase.cpp */; };
+		48BED72928DCA86300E73118 /* XServerBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72628DCA86300E73118 /* XServerBase.cpp */; };
+		48BED72C28DCA87000E73118 /* XMysql.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72A28DCA87000E73118 /* XMysql.cpp */; };
+		48BED72D28DCA87000E73118 /* XMysql.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72A28DCA87000E73118 /* XMysql.cpp */; };
+		48BED73028DCA88600E73118 /* XHttp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72F28DCA88600E73118 /* XHttp.cpp */; };
+		48BED73128DCA88600E73118 /* XHttp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED72F28DCA88600E73118 /* XHttp.cpp */; };
+		48BED73428DCA89000E73118 /* XBaseNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73228DCA89000E73118 /* XBaseNet.cpp */; };
+		48BED73528DCA89000E73118 /* XBaseNet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73228DCA89000E73118 /* XBaseNet.cpp */; };
+		48BED73828DCA89C00E73118 /* XLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73728DCA89C00E73118 /* XLog.cpp */; };
+		48BED73928DCA89C00E73118 /* XLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73728DCA89C00E73118 /* XLog.cpp */; };
+		48BED74628DCA8B300E73118 /* XUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73A28DCA8B300E73118 /* XUtils.cpp */; };
+		48BED74728DCA8B300E73118 /* XUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73A28DCA8B300E73118 /* XUtils.cpp */; };
+		48BED74828DCA8B300E73118 /* XWheelTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73E28DCA8B300E73118 /* XWheelTimer.cpp */; };
+		48BED74928DCA8B300E73118 /* XWheelTimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73E28DCA8B300E73118 /* XWheelTimer.cpp */; };
+		48BED74A28DCA8B300E73118 /* XMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73F28DCA8B300E73118 /* XMath.cpp */; };
+		48BED74B28DCA8B300E73118 /* XMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED73F28DCA8B300E73118 /* XMath.cpp */; };
+		48BED74C28DCA8B300E73118 /* XFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED74028DCA8B300E73118 /* XFile.cpp */; };
+		48BED74D28DCA8B300E73118 /* XFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED74028DCA8B300E73118 /* XFile.cpp */; };
+		48BED74E28DCA8B300E73118 /* XString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED74428DCA8B300E73118 /* XString.cpp */; };
+		48BED74F28DCA8B300E73118 /* XString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED74428DCA8B300E73118 /* XString.cpp */; };
+		48BED75528DEF92B00E73118 /* XTCSDataStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75328DEF92B00E73118 /* XTCSDataStruct.cpp */; };
+		48BED75628DEF92B00E73118 /* XTCSDataStruct.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75328DEF92B00E73118 /* XTCSDataStruct.cpp */; };
+		48BED75928DEFCB200E73118 /* XTCSMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75728DEFCB200E73118 /* XTCSMap.cpp */; };
+		48BED75A28DEFCB200E73118 /* XTCSMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75728DEFCB200E73118 /* XTCSMap.cpp */; };
+		48F08A2D28F47B4400B1DE68 /* XTCSSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */; };
+		48F08A2E28F47B4400B1DE68 /* XTCSSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */; };
+		48F08A3828F5C11B00B1DE68 /* XScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */; };
+		48F08A3928F5C11B00B1DE68 /* XScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */; };
+		48F08A3F28F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */; };
+		48F08A4028F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */; };
+		48F08A4728F86FDD00B1DE68 /* CrashReport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A4528F86FDD00B1DE68 /* CrashReport.mm */; };
+		48F08A4F28F8724700B1DE68 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F08A4E28F8724700B1DE68 /* SystemConfiguration.framework */; };
+		48F08A5B28F879E800B1DE68 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F08A5928F879E800B1DE68 /* Bugly.framework */; };
+		48F08A5C28F879E800B1DE68 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F08A5928F879E800B1DE68 /* Bugly.framework */; };
+		48F08A5D28F879E800B1DE68 /* libBuglyAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F08A5A28F879E800B1DE68 /* libBuglyAgent.a */; };
+		48F08A5E28F879E800B1DE68 /* libBuglyAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F08A5A28F879E800B1DE68 /* libBuglyAgent.a */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10517EB98FF00D1A890 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 503AE10317EB98FF00D1A890 /* main.cpp */; };
 		503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 503AE11A17EB9C5A00D1A890 /* IOKit.framework */; };
@@ -42,8 +134,6 @@
 		5087E76B17EB910900C73F5D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78817EB974C00C73F5D /* AppKit.framework */; };
 		5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5087E78A17EB975400C73F5D /* OpenGL.framework */; };
-		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
-		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -113,14 +203,114 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		294D0D631D0D56D500F7F5D4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
-		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
-		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
-		46880B7A19C43A67006E1F66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
+		487CD91A28D4BFCE0079B06D /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		487CD91B28D4BFD60079B06D /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
+		487CD91F28D4C1AB0079B06D /* XTCSInfoManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSInfoManager.cpp; sourceTree = "<group>"; };
+		487CD92028D4C1AB0079B06D /* XTCSInfoManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSInfoManager.hpp; sourceTree = "<group>"; };
+		487CD92328D4C1CD0079B06D /* XTCSGameScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSGameScene.cpp; sourceTree = "<group>"; };
+		487CD92428D4C1CD0079B06D /* XTCSGameScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSGameScene.hpp; sourceTree = "<group>"; };
+		487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSHomeScene.cpp; sourceTree = "<group>"; };
+		487CD92928D8C3390079B06D /* XTCSHomeScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSHomeScene.hpp; sourceTree = "<group>"; };
+		48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSCommLayer.cpp; sourceTree = "<group>"; };
+		48B1972928E8554000D6CD99 /* XTCSCommLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSCommLayer.hpp; sourceTree = "<group>"; };
+		48B1974A28EB08E000D6CD99 /* swift-algorithms-main */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-algorithms-main"; path = "../../../a d/swift/swift-algorithms-main"; sourceTree = "<group>"; };
+		48BA2A1928E04B76000078F5 /* XTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XTime.cpp; path = ../../XBase/src/XPublic/XTools/XUtils/XTime.cpp; sourceTree = "<group>"; };
+		48BA2A2128E1E630000078F5 /* XTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTime.h; path = ../../XBase/src/XPublic/XTools/XUtils/XTime.h; sourceTree = "<group>"; };
+		48BED66128D9E5CF00E73118 /* res_tcs_v1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res_tcs_v1; sourceTree = "<group>"; };
+		48BED67B28DCA07F00E73118 /* XTCSSnake.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSSnake.cpp; sourceTree = "<group>"; };
+		48BED67C28DCA07F00E73118 /* XTCSSnake.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSSnake.hpp; sourceTree = "<group>"; };
+		48BED6B128DCA6D100E73118 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = third/Xml/tinyxml.cpp; sourceTree = "<group>"; };
+		48BED6B228DCA6D100E73118 /* tinystr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinystr.cpp; path = third/Xml/tinystr.cpp; sourceTree = "<group>"; };
+		48BED6B328DCA6D100E73118 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlparser.cpp; path = third/Xml/tinyxmlparser.cpp; sourceTree = "<group>"; };
+		48BED6B428DCA6D100E73118 /* tinystr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinystr.h; path = third/Xml/tinystr.h; sourceTree = "<group>"; };
+		48BED6B528DCA6D100E73118 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = third/Xml/tinyxml.h; sourceTree = "<group>"; };
+		48BED6B628DCA6D100E73118 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = third/Xml/tinyxmlerror.cpp; sourceTree = "<group>"; };
+		48BED6C028DCA70200E73118 /* internal */ = {isa = PBXFileReference; lastKnownFileType = folder; name = internal; path = third/rapidjson/internal; sourceTree = "<group>"; };
+		48BED6C128DCA70200E73118 /* error */ = {isa = PBXFileReference; lastKnownFileType = folder; name = error; path = third/rapidjson/error; sourceTree = "<group>"; };
+		48BED6C228DCA70200E73118 /* encodings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encodings.h; path = third/rapidjson/encodings.h; sourceTree = "<group>"; };
+		48BED6C328DCA70200E73118 /* pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pointer.h; path = third/rapidjson/pointer.h; sourceTree = "<group>"; };
+		48BED6C428DCA70200E73118 /* schema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = schema.h; path = third/rapidjson/schema.h; sourceTree = "<group>"; };
+		48BED6C528DCA70200E73118 /* stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stream.h; path = third/rapidjson/stream.h; sourceTree = "<group>"; };
+		48BED6C628DCA70200E73118 /* document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = document.h; path = third/rapidjson/document.h; sourceTree = "<group>"; };
+		48BED6C728DCA70200E73118 /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = reader.h; path = third/rapidjson/reader.h; sourceTree = "<group>"; };
+		48BED6C828DCA70200E73118 /* fwd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = third/rapidjson/fwd.h; sourceTree = "<group>"; };
+		48BED6C928DCA70200E73118 /* memorybuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memorybuffer.h; path = third/rapidjson/memorybuffer.h; sourceTree = "<group>"; };
+		48BED6CA28DCA70200E73118 /* istreamwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = istreamwrapper.h; path = third/rapidjson/istreamwrapper.h; sourceTree = "<group>"; };
+		48BED6CB28DCA70200E73118 /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = writer.h; path = third/rapidjson/writer.h; sourceTree = "<group>"; };
+		48BED6CC28DCA70200E73118 /* rapidjson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = rapidjson.h; path = third/rapidjson/rapidjson.h; sourceTree = "<group>"; };
+		48BED6CD28DCA70200E73118 /* stringbuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stringbuffer.h; path = third/rapidjson/stringbuffer.h; sourceTree = "<group>"; };
+		48BED6CE28DCA70200E73118 /* encodedstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = encodedstream.h; path = third/rapidjson/encodedstream.h; sourceTree = "<group>"; };
+		48BED6CF28DCA70200E73118 /* filereadstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filereadstream.h; path = third/rapidjson/filereadstream.h; sourceTree = "<group>"; };
+		48BED6D028DCA70200E73118 /* uri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = uri.h; path = third/rapidjson/uri.h; sourceTree = "<group>"; };
+		48BED6D128DCA70200E73118 /* memorystream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = memorystream.h; path = third/rapidjson/memorystream.h; sourceTree = "<group>"; };
+		48BED6D228DCA70200E73118 /* ostreamwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ostreamwrapper.h; path = third/rapidjson/ostreamwrapper.h; sourceTree = "<group>"; };
+		48BED6D328DCA70200E73118 /* cursorstreamwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cursorstreamwrapper.h; path = third/rapidjson/cursorstreamwrapper.h; sourceTree = "<group>"; };
+		48BED6D428DCA70200E73118 /* allocators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = allocators.h; path = third/rapidjson/allocators.h; sourceTree = "<group>"; };
+		48BED6D528DCA70200E73118 /* filewritestream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = filewritestream.h; path = third/rapidjson/filewritestream.h; sourceTree = "<group>"; };
+		48BED6D628DCA70200E73118 /* prettywriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = prettywriter.h; path = third/rapidjson/prettywriter.h; sourceTree = "<group>"; };
+		48BED6DF28DCA74800E73118 /* XHttpStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHttpStruct.h; path = ../../XBase/src/XPublic/XStruct/XHttpStruct.h; sourceTree = "<group>"; };
+		48BED6E028DCA74800E73118 /* XNetStruct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XNetStruct.cpp; path = ../../XBase/src/XPublic/XStruct/XNetStruct.cpp; sourceTree = "<group>"; };
+		48BED6E128DCA74800E73118 /* XBaseStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XBaseStruct.h; path = ../../XBase/src/XPublic/XStruct/XBaseStruct.h; sourceTree = "<group>"; };
+		48BED6E228DCA74800E73118 /* XHttpStruct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XHttpStruct.cpp; path = ../../XBase/src/XPublic/XStruct/XHttpStruct.cpp; sourceTree = "<group>"; };
+		48BED6E328DCA74800E73118 /* XUtilsStruct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XUtilsStruct.cpp; path = ../../XBase/src/XPublic/XStruct/XUtilsStruct.cpp; sourceTree = "<group>"; };
+		48BED6E428DCA74800E73118 /* XNetStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XNetStruct.h; path = ../../XBase/src/XPublic/XStruct/XNetStruct.h; sourceTree = "<group>"; };
+		48BED6E528DCA74800E73118 /* XUtilsStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XUtilsStruct.h; path = ../../XBase/src/XPublic/XStruct/XUtilsStruct.h; sourceTree = "<group>"; };
+		48BED6ED28DCA77100E73118 /* XFiniteStateMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XFiniteStateMachine.cpp; path = ../../XBase/src/XPublic/XGame/XDesignBase/XFiniteStateMachine.cpp; sourceTree = "<group>"; };
+		48BED6EE28DCA77100E73118 /* XFiniteStateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XFiniteStateMachine.h; path = ../../XBase/src/XPublic/XGame/XDesignBase/XFiniteStateMachine.h; sourceTree = "<group>"; };
+		48BED6F428DCA7AF00E73118 /* web.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = web.xml; path = ../../XBase/src/XPublic/XFrames/XResourse/xml/web.xml; sourceTree = "<group>"; };
+		48BED6F728DCA7BD00E73118 /* XServletDefine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XServletDefine.cpp; path = ../../XBase/src/XPublic/XFrames/XServlet/XServletDefine.cpp; sourceTree = "<group>"; };
+		48BED6F828DCA7BD00E73118 /* XServletDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XServletDefine.h; path = ../../XBase/src/XPublic/XFrames/XServlet/XServletDefine.h; sourceTree = "<group>"; };
+		48BED6F928DCA7BD00E73118 /* XServlet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XServlet.h; path = ../../XBase/src/XPublic/XFrames/XServlet/XServlet.h; sourceTree = "<group>"; };
+		48BED6FA28DCA7BD00E73118 /* XServlet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XServlet.cpp; path = ../../XBase/src/XPublic/XFrames/XServlet/XServlet.cpp; sourceTree = "<group>"; };
+		48BED70028DCA7E900E73118 /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test.txt; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/test.txt; sourceTree = "<group>"; };
+		48BED70128DCA7E900E73118 /* login.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = login.gif; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/login.gif; sourceTree = "<group>"; };
+		48BED70228DCA7E900E73118 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/index.html; sourceTree = "<group>"; };
+		48BED70328DCA7E900E73118 /* xxx.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = xxx.jpg; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/xxx.jpg; sourceTree = "<group>"; };
+		48BED70428DCA7E900E73118 /* imgs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = imgs; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/imgs; sourceTree = "<group>"; };
+		48BED70528DCA7E900E73118 /* xxx.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = xxx.mp4; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/xxx.mp4; sourceTree = "<group>"; };
+		48BED70628DCA7EA00E73118 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = favicon.ico; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/favicon.ico; sourceTree = "<group>"; };
+		48BED70728DCA7EA00E73118 /* baidu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = baidu.html; path = ../../XBase/src/XPublic/XFrames/XServlet/XWebDefaultRoot/baidu.html; sourceTree = "<group>"; };
+		48BED71F28DCA84A00E73118 /* XPthreadPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPthreadPool.h; path = ../../XBase/src/XPublic/XTools/XPthread/XPthreadPool.h; sourceTree = "<group>"; };
+		48BED72128DCA84A00E73118 /* XPthreadPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XPthreadPool.cpp; path = ../../XBase/src/XPublic/XTools/XPthread/XPthreadPool.cpp; sourceTree = "<group>"; };
+		48BED72628DCA86300E73118 /* XServerBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XServerBase.cpp; path = ../../XBase/src/XPublic/XTools/XServer/XServerBase.cpp; sourceTree = "<group>"; };
+		48BED72728DCA86300E73118 /* XServerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XServerBase.h; path = ../../XBase/src/XPublic/XTools/XServer/XServerBase.h; sourceTree = "<group>"; };
+		48BED72A28DCA87000E73118 /* XMysql.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XMysql.cpp; path = ../../XBase/src/XPublic/XTools/XSql/XMysql.cpp; sourceTree = "<group>"; };
+		48BED72B28DCA87000E73118 /* XMysql.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMysql.h; path = ../../XBase/src/XPublic/XTools/XSql/XMysql.h; sourceTree = "<group>"; };
+		48BED72E28DCA88600E73118 /* XHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHttp.h; path = ../../XBase/src/XPublic/XTools/XHTTP/XHttp.h; sourceTree = "<group>"; };
+		48BED72F28DCA88600E73118 /* XHttp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XHttp.cpp; path = ../../XBase/src/XPublic/XTools/XHTTP/XHttp.cpp; sourceTree = "<group>"; };
+		48BED73228DCA89000E73118 /* XBaseNet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XBaseNet.cpp; path = ../../XBase/src/XPublic/XTools/XNet/XBaseNet.cpp; sourceTree = "<group>"; };
+		48BED73328DCA89000E73118 /* XBaseNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XBaseNet.h; path = ../../XBase/src/XPublic/XTools/XNet/XBaseNet.h; sourceTree = "<group>"; };
+		48BED73628DCA89C00E73118 /* XLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLog.h; path = ../../XBase/src/XPublic/XTools/XLog/XLog.h; sourceTree = "<group>"; };
+		48BED73728DCA89C00E73118 /* XLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XLog.cpp; path = ../../XBase/src/XPublic/XTools/XLog/XLog.cpp; sourceTree = "<group>"; };
+		48BED73A28DCA8B300E73118 /* XUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XUtils.cpp; path = ../../XBase/src/XPublic/XTools/XUtils/XUtils.cpp; sourceTree = "<group>"; };
+		48BED73B28DCA8B300E73118 /* XUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XUtils.h; path = ../../XBase/src/XPublic/XTools/XUtils/XUtils.h; sourceTree = "<group>"; };
+		48BED73C28DCA8B300E73118 /* XFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XFile.h; path = ../../XBase/src/XPublic/XTools/XUtils/XFile.h; sourceTree = "<group>"; };
+		48BED73D28DCA8B300E73118 /* XLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLock.h; path = ../../XBase/src/XPublic/XTools/XUtils/XLock.h; sourceTree = "<group>"; };
+		48BED73E28DCA8B300E73118 /* XWheelTimer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XWheelTimer.cpp; path = ../../XBase/src/XPublic/XTools/XUtils/XWheelTimer.cpp; sourceTree = "<group>"; };
+		48BED73F28DCA8B300E73118 /* XMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XMath.cpp; path = ../../XBase/src/XPublic/XTools/XUtils/XMath.cpp; sourceTree = "<group>"; };
+		48BED74028DCA8B300E73118 /* XFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XFile.cpp; path = ../../XBase/src/XPublic/XTools/XUtils/XFile.cpp; sourceTree = "<group>"; };
+		48BED74128DCA8B300E73118 /* XWheelTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XWheelTimer.h; path = ../../XBase/src/XPublic/XTools/XUtils/XWheelTimer.h; sourceTree = "<group>"; };
+		48BED74228DCA8B300E73118 /* XMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMath.h; path = ../../XBase/src/XPublic/XTools/XUtils/XMath.h; sourceTree = "<group>"; };
+		48BED74328DCA8B300E73118 /* XBlockQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XBlockQueue.h; path = ../../XBase/src/XPublic/XTools/XUtils/XBlockQueue.h; sourceTree = "<group>"; };
+		48BED74428DCA8B300E73118 /* XString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XString.cpp; path = ../../XBase/src/XPublic/XTools/XUtils/XString.cpp; sourceTree = "<group>"; };
+		48BED75128DCB6D500E73118 /* XString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XString.h; path = ../../XBase/src/XPublic/XTools/XUtils/XString.h; sourceTree = "<group>"; };
+		48BED75328DEF92B00E73118 /* XTCSDataStruct.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSDataStruct.cpp; sourceTree = "<group>"; };
+		48BED75428DEF92B00E73118 /* XTCSDataStruct.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSDataStruct.hpp; sourceTree = "<group>"; };
+		48BED75728DEFCB200E73118 /* XTCSMap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSMap.cpp; sourceTree = "<group>"; };
+		48BED75828DEFCB200E73118 /* XTCSMap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSMap.hpp; sourceTree = "<group>"; };
+		48F08A2B28F47B4400B1DE68 /* XTCSSoundManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = XTCSSoundManager.hpp; sourceTree = "<group>"; };
+		48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSSoundManager.cpp; sourceTree = "<group>"; };
+		48F08A3428F5BC6600B1DE68 /* XCOCOS2DX.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XCOCOS2DX.hpp; sourceTree = "<group>"; };
+		48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XScreenUtil.m; sourceTree = "<group>"; };
+		48F08A3A28F5C13700B1DE68 /* XScreenUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XScreenUtil.h; sourceTree = "<group>"; };
+		48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XCOCOS2DX.mm; sourceTree = "<group>"; };
+		48F08A4528F86FDD00B1DE68 /* CrashReport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CrashReport.mm; path = ../../XBase/src/XPublic/XStatistic/XBugly/CrashReport.mm; sourceTree = "<group>"; };
+		48F08A4628F86FDD00B1DE68 /* CrashReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CrashReport.h; path = ../../XBase/src/XPublic/XStatistic/XBugly/CrashReport.h; sourceTree = "<group>"; };
+		48F08A4E28F8724700B1DE68 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		48F08A5928F879E800B1DE68 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bugly.framework; path = XFrame/Bugly/Bugly.framework; sourceTree = "<group>"; };
+		48F08A5A28F879E800B1DE68 /* libBuglyAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBuglyAgent.a; path = XFrame/Bugly/libBuglyAgent.a; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE10317EB98FF00D1A890 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = mac/main.cpp; sourceTree = "<group>"; };
@@ -130,7 +320,6 @@
 		5087E76F17EB910900C73F5D /* XTCSnake-desktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XTCSnake-desktop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5087E78817EB974C00C73F5D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5087E78A17EB975400C73F5D /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -149,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F08A4F28F8724700B1DE68 /* SystemConfiguration.framework in Frameworks */,
 				294D0D641D0D56D500F7F5D4 /* CoreText.framework in Frameworks */,
 				ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
@@ -161,7 +351,9 @@
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
+				48F08A5D28F879E800B1DE68 /* libBuglyAgent.a in Frameworks */,
 				D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */,
+				48F08A5B28F879E800B1DE68 /* Bugly.framework in Frameworks */,
 				D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,10 +362,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48F08A5C28F879E800B1DE68 /* Bugly.framework in Frameworks */,
 				ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */,
 				1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */,
 				5087E76717EB910900C73F5D /* libz.dylib in Frameworks */,
 				8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */,
+				48F08A5E28F879E800B1DE68 /* libBuglyAgent.a in Frameworks */,
 				503AE11B17EB9C5A00D1A890 /* IOKit.framework in Frameworks */,
 				5087E78B17EB975400C73F5D /* OpenGL.framework in Frameworks */,
 				5087E78917EB974C00C73F5D /* AppKit.framework in Frameworks */,
@@ -227,6 +421,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				48B1974928EB08E000D6CD99 /* Packages */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -241,6 +436,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48F08A5928F879E800B1DE68 /* Bugly.framework */,
+				48F08A5A28F879E800B1DE68 /* libBuglyAgent.a */,
+				48F08A4E28F8724700B1DE68 /* SystemConfiguration.framework */,
 				294D0D631D0D56D500F7F5D4 /* CoreText.framework */,
 				ED545A7D1B68A1FA00C3958E /* libiconv.dylib */,
 				ED545A7B1B68A1F400C3958E /* libiconv.dylib */,
@@ -268,11 +466,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				521A8EA819F11F5000D177D7 /* fonts */,
-				3EACC98E19EE6D4300EB3C5E /* res */,
-				46880B7619C43A67006E1F66 /* CloseNormal.png */,
-				46880B7719C43A67006E1F66 /* CloseSelected.png */,
-				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				48BED66128D9E5CF00E73118 /* res_tcs_v1 */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -281,13 +475,312 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				48BED69528DCA58A00E73118 /* third */,
+				48BED69328DCA57100E73118 /* XPublic */,
+				487CD91E28D4C1790079B06D /* XTCSnake */,
+				487CD91B28D4BFD60079B06D /* StartScene.cpp */,
+				487CD91A28D4BFCE0079B06D /* StartScene.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		487CD91E28D4C1790079B06D /* XTCSnake */ = {
+			isa = PBXGroup;
+			children = (
+				48BED67928DCA05600E73118 /* TCSStruct */,
+				48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */,
+				48F08A2B28F47B4400B1DE68 /* XTCSSoundManager.hpp */,
+				487CD91F28D4C1AB0079B06D /* XTCSInfoManager.cpp */,
+				487CD92028D4C1AB0079B06D /* XTCSInfoManager.hpp */,
+				487CD92328D4C1CD0079B06D /* XTCSGameScene.cpp */,
+				487CD92428D4C1CD0079B06D /* XTCSGameScene.hpp */,
+				487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */,
+				487CD92928D8C3390079B06D /* XTCSHomeScene.hpp */,
+				48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */,
+				48B1972928E8554000D6CD99 /* XTCSCommLayer.hpp */,
+			);
+			path = XTCSnake;
+			sourceTree = "<group>";
+		};
+		48B1974928EB08E000D6CD99 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				48B1974A28EB08E000D6CD99 /* swift-algorithms-main */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		48BED67928DCA05600E73118 /* TCSStruct */ = {
+			isa = PBXGroup;
+			children = (
+				48BED67B28DCA07F00E73118 /* XTCSSnake.cpp */,
+				48BED67C28DCA07F00E73118 /* XTCSSnake.hpp */,
+				48BED75328DEF92B00E73118 /* XTCSDataStruct.cpp */,
+				48BED75428DEF92B00E73118 /* XTCSDataStruct.hpp */,
+				48BED75728DEFCB200E73118 /* XTCSMap.cpp */,
+				48BED75828DEFCB200E73118 /* XTCSMap.hpp */,
+			);
+			path = TCSStruct;
+			sourceTree = "<group>";
+		};
+		48BED69328DCA57100E73118 /* XPublic */ = {
+			isa = PBXGroup;
+			children = (
+				48F08A4228F86FBB00B1DE68 /* XStatistic */,
+				48BED6DE28DCA73600E73118 /* XStruct */,
+				48BED6DD28DCA72C00E73118 /* XGame */,
+				48BED6DC28DCA72100E73118 /* XTools */,
+				48BED6DB28DCA71A00E73118 /* XFrames */,
+			);
+			name = XPublic;
+			sourceTree = "<group>";
+		};
+		48BED69528DCA58A00E73118 /* third */ = {
+			isa = PBXGroup;
+			children = (
+				48BED69728DCA5D400E73118 /* rapidjson */,
+				48BED69628DCA59400E73118 /* Xml */,
+			);
+			name = third;
+			sourceTree = "<group>";
+		};
+		48BED69628DCA59400E73118 /* Xml */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6B228DCA6D100E73118 /* tinystr.cpp */,
+				48BED6B428DCA6D100E73118 /* tinystr.h */,
+				48BED6B128DCA6D100E73118 /* tinyxml.cpp */,
+				48BED6B528DCA6D100E73118 /* tinyxml.h */,
+				48BED6B628DCA6D100E73118 /* tinyxmlerror.cpp */,
+				48BED6B328DCA6D100E73118 /* tinyxmlparser.cpp */,
+			);
+			name = Xml;
+			sourceTree = "<group>";
+		};
+		48BED69728DCA5D400E73118 /* rapidjson */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6D428DCA70200E73118 /* allocators.h */,
+				48BED6D328DCA70200E73118 /* cursorstreamwrapper.h */,
+				48BED6C628DCA70200E73118 /* document.h */,
+				48BED6CE28DCA70200E73118 /* encodedstream.h */,
+				48BED6C228DCA70200E73118 /* encodings.h */,
+				48BED6C128DCA70200E73118 /* error */,
+				48BED6CF28DCA70200E73118 /* filereadstream.h */,
+				48BED6D528DCA70200E73118 /* filewritestream.h */,
+				48BED6C828DCA70200E73118 /* fwd.h */,
+				48BED6C028DCA70200E73118 /* internal */,
+				48BED6CA28DCA70200E73118 /* istreamwrapper.h */,
+				48BED6C928DCA70200E73118 /* memorybuffer.h */,
+				48BED6D128DCA70200E73118 /* memorystream.h */,
+				48BED6D228DCA70200E73118 /* ostreamwrapper.h */,
+				48BED6C328DCA70200E73118 /* pointer.h */,
+				48BED6D628DCA70200E73118 /* prettywriter.h */,
+				48BED6CC28DCA70200E73118 /* rapidjson.h */,
+				48BED6C728DCA70200E73118 /* reader.h */,
+				48BED6C428DCA70200E73118 /* schema.h */,
+				48BED6C528DCA70200E73118 /* stream.h */,
+				48BED6CD28DCA70200E73118 /* stringbuffer.h */,
+				48BED6D028DCA70200E73118 /* uri.h */,
+				48BED6CB28DCA70200E73118 /* writer.h */,
+			);
+			name = rapidjson;
+			sourceTree = "<group>";
+		};
+		48BED6DB28DCA71A00E73118 /* XFrames */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6F228DCA79300E73118 /* XResourse */,
+				48BED6F128DCA78400E73118 /* XServlet */,
+			);
+			name = XFrames;
+			sourceTree = "<group>";
+		};
+		48BED6DC28DCA72100E73118 /* XTools */ = {
+			isa = PBXGroup;
+			children = (
+				48BED71E28DCA83A00E73118 /* XPthread */,
+				48BED71D28DCA82F00E73118 /* XUtils */,
+				48BED71C28DCA82900E73118 /* XServer */,
+				48BED71B28DCA81F00E73118 /* XSql */,
+				48BED71A28DCA81B00E73118 /* XLog */,
+				48BED71928DCA81600E73118 /* XNet */,
+				48BED71828DCA80C00E73118 /* XHTTP */,
+			);
+			name = XTools;
+			sourceTree = "<group>";
+		};
+		48BED6DD28DCA72C00E73118 /* XGame */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6EC28DCA76100E73118 /* XDesignBase */,
+			);
+			name = XGame;
+			sourceTree = "<group>";
+		};
+		48BED6DE28DCA73600E73118 /* XStruct */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6E128DCA74800E73118 /* XBaseStruct.h */,
+				48BED6E228DCA74800E73118 /* XHttpStruct.cpp */,
+				48BED6DF28DCA74800E73118 /* XHttpStruct.h */,
+				48BED6E028DCA74800E73118 /* XNetStruct.cpp */,
+				48BED6E428DCA74800E73118 /* XNetStruct.h */,
+				48BED6E328DCA74800E73118 /* XUtilsStruct.cpp */,
+				48BED6E528DCA74800E73118 /* XUtilsStruct.h */,
+			);
+			name = XStruct;
+			sourceTree = "<group>";
+		};
+		48BED6EC28DCA76100E73118 /* XDesignBase */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6ED28DCA77100E73118 /* XFiniteStateMachine.cpp */,
+				48BED6EE28DCA77100E73118 /* XFiniteStateMachine.h */,
+			);
+			name = XDesignBase;
+			sourceTree = "<group>";
+		};
+		48BED6F128DCA78400E73118 /* XServlet */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6FF28DCA7D500E73118 /* XWebDefaultRoot */,
+				48BED6FA28DCA7BD00E73118 /* XServlet.cpp */,
+				48BED6F928DCA7BD00E73118 /* XServlet.h */,
+				48BED6F728DCA7BD00E73118 /* XServletDefine.cpp */,
+				48BED6F828DCA7BD00E73118 /* XServletDefine.h */,
+			);
+			name = XServlet;
+			sourceTree = "<group>";
+		};
+		48BED6F228DCA79300E73118 /* XResourse */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6F328DCA7A200E73118 /* xml */,
+			);
+			name = XResourse;
+			sourceTree = "<group>";
+		};
+		48BED6F328DCA7A200E73118 /* xml */ = {
+			isa = PBXGroup;
+			children = (
+				48BED6F428DCA7AF00E73118 /* web.xml */,
+			);
+			name = xml;
+			sourceTree = "<group>";
+		};
+		48BED6FF28DCA7D500E73118 /* XWebDefaultRoot */ = {
+			isa = PBXGroup;
+			children = (
+				48BED70728DCA7EA00E73118 /* baidu.html */,
+				48BED70628DCA7EA00E73118 /* favicon.ico */,
+				48BED70428DCA7E900E73118 /* imgs */,
+				48BED70228DCA7E900E73118 /* index.html */,
+				48BED70128DCA7E900E73118 /* login.gif */,
+				48BED70028DCA7E900E73118 /* test.txt */,
+				48BED70328DCA7E900E73118 /* xxx.jpg */,
+				48BED70528DCA7E900E73118 /* xxx.mp4 */,
+			);
+			name = XWebDefaultRoot;
+			sourceTree = "<group>";
+		};
+		48BED71828DCA80C00E73118 /* XHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				48BED72F28DCA88600E73118 /* XHttp.cpp */,
+				48BED72E28DCA88600E73118 /* XHttp.h */,
+			);
+			name = XHTTP;
+			sourceTree = "<group>";
+		};
+		48BED71928DCA81600E73118 /* XNet */ = {
+			isa = PBXGroup;
+			children = (
+				48BED73228DCA89000E73118 /* XBaseNet.cpp */,
+				48BED73328DCA89000E73118 /* XBaseNet.h */,
+			);
+			name = XNet;
+			sourceTree = "<group>";
+		};
+		48BED71A28DCA81B00E73118 /* XLog */ = {
+			isa = PBXGroup;
+			children = (
+				48BED73728DCA89C00E73118 /* XLog.cpp */,
+				48BED73628DCA89C00E73118 /* XLog.h */,
+			);
+			name = XLog;
+			sourceTree = "<group>";
+		};
+		48BED71B28DCA81F00E73118 /* XSql */ = {
+			isa = PBXGroup;
+			children = (
+				48BED72A28DCA87000E73118 /* XMysql.cpp */,
+				48BED72B28DCA87000E73118 /* XMysql.h */,
+			);
+			name = XSql;
+			sourceTree = "<group>";
+		};
+		48BED71C28DCA82900E73118 /* XServer */ = {
+			isa = PBXGroup;
+			children = (
+				48BED72628DCA86300E73118 /* XServerBase.cpp */,
+				48BED72728DCA86300E73118 /* XServerBase.h */,
+			);
+			name = XServer;
+			sourceTree = "<group>";
+		};
+		48BED71D28DCA82F00E73118 /* XUtils */ = {
+			isa = PBXGroup;
+			children = (
+				48BA2A2128E1E630000078F5 /* XTime.h */,
+				48BA2A1928E04B76000078F5 /* XTime.cpp */,
+				48BED75128DCB6D500E73118 /* XString.h */,
+				48BED74328DCA8B300E73118 /* XBlockQueue.h */,
+				48BED74028DCA8B300E73118 /* XFile.cpp */,
+				48BED73C28DCA8B300E73118 /* XFile.h */,
+				48BED73D28DCA8B300E73118 /* XLock.h */,
+				48BED73F28DCA8B300E73118 /* XMath.cpp */,
+				48BED74228DCA8B300E73118 /* XMath.h */,
+				48BED74428DCA8B300E73118 /* XString.cpp */,
+				48BED73A28DCA8B300E73118 /* XUtils.cpp */,
+				48BED73B28DCA8B300E73118 /* XUtils.h */,
+				48BED73E28DCA8B300E73118 /* XWheelTimer.cpp */,
+				48BED74128DCA8B300E73118 /* XWheelTimer.h */,
+				48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */,
+				48F08A3428F5BC6600B1DE68 /* XCOCOS2DX.hpp */,
+				48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */,
+				48F08A3A28F5C13700B1DE68 /* XScreenUtil.h */,
+			);
+			name = XUtils;
+			sourceTree = "<group>";
+		};
+		48BED71E28DCA83A00E73118 /* XPthread */ = {
+			isa = PBXGroup;
+			children = (
+				48BED72128DCA84A00E73118 /* XPthreadPool.cpp */,
+				48BED71F28DCA84A00E73118 /* XPthreadPool.h */,
+			);
+			name = XPthread;
+			sourceTree = "<group>";
+		};
+		48F08A4228F86FBB00B1DE68 /* XStatistic */ = {
+			isa = PBXGroup;
+			children = (
+				48F08A4428F86FC500B1DE68 /* XBugly */,
+			);
+			name = XStatistic;
+			sourceTree = "<group>";
+		};
+		48F08A4428F86FC500B1DE68 /* XBugly */ = {
+			isa = PBXGroup;
+			children = (
+				48F08A4628F86FDD00B1DE68 /* CrashReport.h */,
+				48F08A4528F86FDD00B1DE68 /* CrashReport.mm */,
+			);
+			name = XBugly;
 			sourceTree = "<group>";
 		};
 		503AE0F517EB97AB00D1A890 /* Icons */ = {
@@ -320,6 +813,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				4891D0D728F9C01100714FDE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -356,6 +850,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = 5AYRWW7G9Q;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "XTCSnake" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -366,6 +865,7 @@
 				Japanese,
 				French,
 				German,
+				Base,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -412,14 +912,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
-				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
-				521A8EA919F11F5000D177D7 /* fonts in Resources */,
-				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				48BED6D728DCA70200E73118 /* internal in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
-				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				48BED6D928DCA70200E73118 /* error in Resources */,
+				48BED70A28DCA7EA00E73118 /* login.gif in Resources */,
+				48BED70C28DCA7EA00E73118 /* index.html in Resources */,
+				48BED71428DCA7EA00E73118 /* favicon.ico in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
+				48BED70E28DCA7EA00E73118 /* xxx.jpg in Resources */,
+				48BED71628DCA7EA00E73118 /* baidu.html in Resources */,
+				48BED71028DCA7EA00E73118 /* imgs in Resources */,
+				48BED6F528DCA7AF00E73118 /* web.xml in Resources */,
+				48BED70828DCA7EA00E73118 /* test.txt in Resources */,
+				48BED71228DCA7EA00E73118 /* xxx.mp4 in Resources */,
+				48BED66228D9E5CF00E73118 /* res_tcs_v1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,27 +934,93 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				48BED70F28DCA7EA00E73118 /* xxx.jpg in Resources */,
+				48BED6F628DCA7AF00E73118 /* web.xml in Resources */,
+				48BED71528DCA7EA00E73118 /* favicon.ico in Resources */,
+				48BED70B28DCA7EA00E73118 /* login.gif in Resources */,
+				48BED6D828DCA70200E73118 /* internal in Resources */,
+				48BED71728DCA7EA00E73118 /* baidu.html in Resources */,
+				48BED71128DCA7EA00E73118 /* imgs in Resources */,
+				48BED71328DCA7EA00E73118 /* xxx.mp4 in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				3EACC99019EE6D4300EB3C5E /* res in Resources */,
-				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
-				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
-				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				48BED66328D9E5CF00E73118 /* res_tcs_v1 in Resources */,
+				48BED70D28DCA7EA00E73118 /* index.html in Resources */,
+				48BED70928DCA7EA00E73118 /* test.txt in Resources */,
+				48BED6DA28DCA70200E73118 /* error in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4891D0D728F9C01100714FDE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"4ae2c74243\"\n# #\nBUGLY_APP_KEY=\"a87900b9-6535-4352-9230-3ad2e0278bba\"\n# #\nBUNDLE_IDENTIFIER=\"com.xinglei.XTCSnake\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n# UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\n# UPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\n# UPLOAD_ARCHIVE_ONLY=0\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\n    BUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\n    echo \"--------------------------------\"\n    echo \"${1}\"\n    echo \"--------------------------------\"\n    exit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\n    P_APP_ID=\"$1\"\n    P_APP_KEY=\"$2\"\n    P_APP_BUNDLE_ID=\"$3\"\n    P_APP_VERSION=\"$4\"\n    P_BSYMBOL_ZIP_FILE=\"$5\"\n\n    #\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\n    P_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n\n    DSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\n    echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n\n    echo \"-----------------------------\"\n    STATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\n    echo \"-----------------------------\"\n\n    UPLOAD_RESULT=\"FAILTURE\"\n    echo \"Bugly server response: ${STATUS}\"\n    if [ ! \"${STATUS}\" ]; then\n        echo \"Error: Failed to upload the zip archive file.\"\n    elif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\n        echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n        UPLOAD_RESULT=\"SUCCESS\"\n    else\n        echo \"Error: Failed to upload the zip archive file to Bugly.\"\n    fi\n\n    #Remove temp dSYM archive\n    #echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n    #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n\n    if [ \"$?\" -ne 0 ]; then\n        exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n    fi\n\n    echo \"--------------------------------\"\n    echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n\n    if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n        echo \"--------------------------------\"\n        echo \"Failed to upload the dSYM\"\n        echo \"Please check the script and try it again.\"\n    fi\n}\n\n# .dSYM解析为bSYMBOL文件\nfunction dSYMParse() {\n    DSYM_FILE=\"$1\"\n    DSYM_SYMBOL_FILE=\"$2\"\n\n    echo \"--------------------------------\"\n    echo \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n    (/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n    echo \"--------------------------------\"\n\n}\n\n# 执行\nfunction run() {\n\n    CONFIG_BUGLY_APP_ID=\"$1\"\n    CONFIG_BUGLY_APP_KEY=\"$2\"\n\n    CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\n    CONFIG_BUGLY_APP_VERSION=\"$4\"\n    CONFIG_DSYM_SOURCE_DIR=\"$5\"\n    CONFIG_DSYM_DEST_DIR=\"$6\"\n    CONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n\n    # 检查必须参数是否设置\n    if [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\n        exitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\n    fi\n\n    if [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\n        exitWithMessage \"Error: Bugly App ID not defined.\" 0\n    fi\n\n    if [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\n        exitWithMessage \"Error: Bugly App Key not defined.\" 0\n    fi\n\n    if [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\n        exitWithMessage \"Error: Bundle Identifier not defined.\" 0\n    fi\n\n    if [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\n        exitWithMessage \"Error: App Version not defined.\" 0\n    fi\n\n    if [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\n        exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\n    fi\n\n    if [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n        exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\n    fi\n\n    if [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n        mkdir ${CONFIG_DSYM_DEST_DIR}\n    fi\n\n    DSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\n    IFS=$'\\n'\n\n    echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n    RET=\"F\"\n    \n    #\n    for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n        RET=\"T\"\n        echo \"Found dSYM file: $dsymFile\"\n\n        DSYM_FILE_NAME=${dsymFile##*/}\n        DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\n        DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\n        DSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n\n        if [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\n            if [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\n                rm -f $DSYM_SYMBOL_ZIP_FILE\n            fi\n            # 如果只上传dSYM，直接压缩dSYM目录\n            zip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\n        else\n            # 使用符号表工具来生成Symbol文件\n            dSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\n        fi\n        \n        # 上传\n        dSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\n    done\n\n    if [ $RET = \"F\" ]; then\n        exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n    fi\n}\n\n# 在Xcode工程中执行\nfunction runInXcode(){\n    echo \"Uploading dSYM to Bugly in Xcode ...\"\n\n    echo \"Info.Plist : ${INFOPLIST_FILE}\"\n\n    BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\n    BUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n\n    # 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\n    if [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\n        BUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\n    else\n        BUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\n    fi\n\n    echo \"--------------------------------\"\n    echo \"Prepare application information.\"\n    echo \"--------------------------------\"\n\n    echo \"Product Name: ${PRODUCT_NAME}\"\n    echo \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\n    echo \"Version: ${BUNDLE_SHORT_VERSION}\"\n    echo \"Build: ${BUNDLE_VERSION}\"\n\n    echo \"Bugly App ID: ${BUGLY_APP_ID}\"\n    echo \"Bugly App key: ${BUGLY_APP_KEY}\"\n    echo \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n\n    echo \"--------------------------------\"\n    echo \"Check the arguments ...\"\n\n    ##检查模拟器编译是否允许上传符号\n    if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n    if [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\n        exitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n    fi\n    fi\n\n    ##检查是否是Release模式编译\n    if [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\n    if [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\n        exitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n    fi\n    fi\n\n    ##检查是否Archive操作\n    if [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\n    if [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\n        echo \"Archive the package\"\n    else\n        exitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\n    fi\n    fi\n\n    #\n    run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n}\n\n# 根据Xcode的环境变量判断是否处于Xcode环境\nINFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n\nBuildInXcode=\"F\"\nif [ -f \"${INFO_PLIST_FILE}\" ]; then\n    BuildInXcode=\"T\"\nfi\n\nif [ $BuildInXcode = \"T\" ]; then\n    runInXcode\nelse\n    echo \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n    # 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\n    BUGLY_APP_ID=\"$1\"\n    BUGLY_APP_KEY=\"$2\"\n    BUNDLE_IDENTIFIER=\"$3\"\n    BUGLY_APP_VERSION=\"$4\"\n    DWARF_DSYM_FOLDER_PATH=\"$5\"\n    SYMBOL_OUTPUT_PATH=\"$6\"\n    UPLOAD_DSYM_ONLY=$7\n    run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BA2A1728DFF711000078F5 /* XTCSGameScene.hpp in Sources */,
+				48BA2A1628DFF709000078F5 /* XTCSHomeScene.hpp in Sources */,
+				48BA2A1528DFF6FE000078F5 /* XTCSInfoManager.hpp in Sources */,
+				48BA2A1428DFF6F9000078F5 /* XTCSDataStruct.hpp in Sources */,
+				48BA2A1328DFF6ED000078F5 /* XTCSMap.hpp in Sources */,
+				48F08A3828F5C11B00B1DE68 /* XScreenUtil.m in Sources */,
+				48B1972A28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */,
+				48BED73828DCA89C00E73118 /* XLog.cpp in Sources */,
+				48BED73028DCA88600E73118 /* XHttp.cpp in Sources */,
+				48BA2A1C28E04B76000078F5 /* XTime.cpp in Sources */,
+				48BED73428DCA89000E73118 /* XBaseNet.cpp in Sources */,
+				48BED75528DEF92B00E73118 /* XTCSDataStruct.cpp in Sources */,
+				48F08A3F28F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */,
+				48BED68128DCA36400E73118 /* XTCSSnake.hpp in Sources */,
+				48BED72C28DCA87000E73118 /* XMysql.cpp in Sources */,
+				48F08A4728F86FDD00B1DE68 /* CrashReport.mm in Sources */,
+				48BED6B728DCA6D100E73118 /* tinyxml.cpp in Sources */,
+				48BED6E628DCA74800E73118 /* XNetStruct.cpp in Sources */,
+				48BED74628DCA8B300E73118 /* XUtils.cpp in Sources */,
+				48BED75928DEFCB200E73118 /* XTCSMap.cpp in Sources */,
+				48BED6BD28DCA6D100E73118 /* tinyxmlerror.cpp in Sources */,
+				48BED6E828DCA74800E73118 /* XHttpStruct.cpp in Sources */,
+				48BED74E28DCA8B300E73118 /* XString.cpp in Sources */,
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
+				48BED6EA28DCA74800E73118 /* XUtilsStruct.cpp in Sources */,
+				48BED67D28DCA07F00E73118 /* XTCSSnake.cpp in Sources */,
+				48BED72828DCA86300E73118 /* XServerBase.cpp in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
+				48BED74A28DCA8B300E73118 /* XMath.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				48BED6FB28DCA7BD00E73118 /* XServletDefine.cpp in Sources */,
+				487CD92A28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */,
+				48BED6EF28DCA77100E73118 /* XFiniteStateMachine.cpp in Sources */,
+				487CD92528D4C1CD0079B06D /* XTCSGameScene.cpp in Sources */,
+				48BED72428DCA84A00E73118 /* XPthreadPool.cpp in Sources */,
+				48BED74C28DCA8B300E73118 /* XFile.cpp in Sources */,
+				48BED6B928DCA6D100E73118 /* tinystr.cpp in Sources */,
+				48F08A2D28F47B4400B1DE68 /* XTCSSoundManager.cpp in Sources */,
+				48BED6FD28DCA7BD00E73118 /* XServlet.cpp in Sources */,
+				48BED6BB28DCA6D100E73118 /* tinyxmlparser.cpp in Sources */,
+				48BED74828DCA8B300E73118 /* XWheelTimer.cpp in Sources */,
+				487CD91C28D4BFD60079B06D /* StartScene.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
-				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				487CD92128D4C1AB0079B06D /* XTCSInfoManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,9 +1028,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BED73128DCA88600E73118 /* XHttp.cpp in Sources */,
+				48F08A2E28F47B4400B1DE68 /* XTCSSoundManager.cpp in Sources */,
+				48BED6BE28DCA6D100E73118 /* tinyxmlerror.cpp in Sources */,
+				48BED73928DCA89C00E73118 /* XLog.cpp in Sources */,
+				48BED74F28DCA8B300E73118 /* XString.cpp in Sources */,
+				48BA2A1D28E04B76000078F5 /* XTime.cpp in Sources */,
+				48BED6BC28DCA6D100E73118 /* tinyxmlparser.cpp in Sources */,
+				48BED6FC28DCA7BD00E73118 /* XServletDefine.cpp in Sources */,
+				48BED6BA28DCA6D100E73118 /* tinystr.cpp in Sources */,
+				48BED74B28DCA8B300E73118 /* XMath.cpp in Sources */,
+				48BED6B828DCA6D100E73118 /* tinyxml.cpp in Sources */,
+				48BED75A28DEFCB200E73118 /* XTCSMap.cpp in Sources */,
+				48BED6F028DCA77100E73118 /* XFiniteStateMachine.cpp in Sources */,
+				48BED6E928DCA74800E73118 /* XHttpStruct.cpp in Sources */,
+				48B1972B28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				48BED6EB28DCA74800E73118 /* XUtilsStruct.cpp in Sources */,
+				48BED74728DCA8B300E73118 /* XUtils.cpp in Sources */,
+				48BED6FE28DCA7BD00E73118 /* XServlet.cpp in Sources */,
+				48BED67E28DCA07F00E73118 /* XTCSSnake.cpp in Sources */,
+				48BED73528DCA89000E73118 /* XBaseNet.cpp in Sources */,
+				487CD92B28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */,
+				48F08A3928F5C11B00B1DE68 /* XScreenUtil.m in Sources */,
+				487CD92228D4C1AB0079B06D /* XTCSInfoManager.cpp in Sources */,
+				48BED6E728DCA74800E73118 /* XNetStruct.cpp in Sources */,
+				48BED72528DCA84A00E73118 /* XPthreadPool.cpp in Sources */,
+				487CD92628D4C1CD0079B06D /* XTCSGameScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				48F08A4028F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */,
+				48BED75628DEF92B00E73118 /* XTCSDataStruct.cpp in Sources */,
+				48BED72928DCA86300E73118 /* XServerBase.cpp in Sources */,
+				48BED72D28DCA87000E73118 /* XMysql.cpp in Sources */,
+				48BED74928DCA8B300E73118 /* XWheelTimer.cpp in Sources */,
+				48BED74D28DCA8B300E73118 /* XFile.cpp in Sources */,
+				487CD91D28D4BFD60079B06D /* StartScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,9 +1087,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = 5AYRWW7G9Q;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XFrame/Bugly",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -493,20 +1107,31 @@
 					USE_FILE32API,
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					__APPLE,
+					__IOS,
+					__COCOS2D,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
-					"$(_COCOS_LIB_IOS_BEGIN)",
-					"$(_COCOS_LIB_IOS_END)",
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"/usr/local/mysql-connector-c++/lib64",
+					"$(PROJECT_DIR)/XFrame/Bugly",
 				);
+				MARKETING_VERSION = 1.0.5;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/XFrame/Bugly/libBuglyAgent.a",
+					"-force_load",
+					"$(SRCROOT)/XFrame/Bugly/Bugly.framework/Bugly",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xinglei.XTCSnake;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
+				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END) /Users/willyoung/Documents/my/code/X/XTCSnake/Classes/** /Users/willyoung/Documents/my/code/X/XTCSnake/Classes/third/** /usr/local/mysql-connector-c++/include";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -516,9 +1141,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = 5AYRWW7G9Q;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XFrame/Bugly",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -526,20 +1160,30 @@
 					USE_FILE32API,
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
 					NDEBUG,
+					__COCOS2D,
+					__IOS,
+					__APPLE,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "";
-				OTHER_LDFLAGS = (
-					"$(_COCOS_LIB_IOS_BEGIN)",
-					"$(_COCOS_LIB_IOS_END)",
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = (
+					"/usr/local/mysql-connector-c++/lib64",
+					"$(PROJECT_DIR)/XFrame/Bugly",
 				);
+				MARKETING_VERSION = 1.0.5;
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/XFrame/Bugly/libBuglyAgent.a",
+					"-force_load",
+					"$(SRCROOT)/XFrame/Bugly/Bugly.framework/Bugly",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xinglei.XTCSnake;
 				SDKROOT = iphoneos;
 				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
+				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END) /Users/willyoung/Documents/my/code/X/XTCSnake/Classes/** /Users/willyoung/Documents/my/code/X/XTCSnake/Classes/third/** /usr/local/mysql-connector-c++/include";
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
@@ -551,6 +1195,10 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XFrame/Bugly",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -566,7 +1214,7 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/XFrame/Bugly";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -582,6 +1230,10 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XFrame/Bugly",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = mac/Prefix.pch;
@@ -596,7 +1248,7 @@
 					"$(SRCROOT)/../cocos2d/external/glfw3/include/mac",
 				);
 				INFOPLIST_FILE = mac/Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/XFrame/Bugly";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_MAC_BEGIN)",
 					"$(_COCOS_LIB_MAC_END)",
@@ -666,7 +1318,7 @@
 				1D6058950D05DD3E006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		5087E76C17EB910900C73F5D /* Build configuration list for PBXNativeTarget "XTCSnake-desktop" */ = {
 			isa = XCConfigurationList;
@@ -675,7 +1327,7 @@
 				5087E76E17EB910900C73F5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "XTCSnake" */ = {
 			isa = XCConfigurationList;
@@ -684,7 +1336,7 @@
 				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

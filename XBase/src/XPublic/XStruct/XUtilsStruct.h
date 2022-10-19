@@ -37,7 +37,7 @@ namespace XFILETOOL
     typedef enum _xjson_type_
     {
         XJSONTYPE_NONE = 0,
-        XJSONTYPE_INT,
+        XJSONTYPE_LONG,
         XJSONTYPE_DOUBLE,
         XJSONTYPE_STRING,
         XJSONTYPE_BOOL,
@@ -49,7 +49,7 @@ namespace XFILETOOL
     {
     public:
         XJsonValue();
-        XJsonValue(int value);
+        XJsonValue(long value);
         XJsonValue(bool value);
         XJsonValue(std::string value);
         XJsonValue(double value);
@@ -58,7 +58,7 @@ namespace XFILETOOL
 
         ~XJsonValue();
 
-        void setIntValue(int value);
+        void setLongValue(long value);
         void setDoubleValue(double value);
         void setStringValue(std::string value);
         void setBoolValue(bool value);
@@ -70,9 +70,9 @@ namespace XFILETOOL
             return m_XJsonType_type;
         }
 
-        inline int getIntValue()
+        inline long getLongValue()
         {
-            return m_i_value;
+            return m_l_value;
         }
 
         inline double getDoubleValue()
@@ -106,7 +106,7 @@ namespace XFILETOOL
     private:
         XJSONTYPE m_XJsonType_type { XJSONTYPE_NONE };
 
-        int m_i_value { 0 };
+        long m_l_value { 0 };
         XJsonPtr m_xJsonPtr_value;
         double m_d_value { 0 };
         std::string m_str_value { "" };
@@ -133,7 +133,14 @@ namespace XFILETOOL
 
         inline XJsonValuePtr getValue(std::string key)
         {
-            return m_mapStrXJVPtr_content[key];
+            if (m_mapStrXJVPtr_content.count(key) == 1)
+            {
+                return m_mapStrXJVPtr_content[key];
+            }
+            else
+            {
+                return std::make_shared<XJsonValue>();
+            }
         }
 
         void getAllKeyValue(std::map<std::string, XJsonValuePtr> &allKeyValue);

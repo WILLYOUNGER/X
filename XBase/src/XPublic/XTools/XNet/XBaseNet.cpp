@@ -3,7 +3,9 @@
 #include <sys/socket.h>	//socket
 #include <netinet/in.h>	//socket's len about inet_ntop
 #include <arpa/inet.h>	//inet_ntop and inet_pton
+#ifdef __LINUX
 #include <sys/epoll.h>
+#endif
 #include <errno.h>
 #include <signal.h>
 #include <unistd.h>		//close
@@ -41,6 +43,7 @@ XServer::~XServer()
 
 void XServer::beginListen()
 {
+#ifdef __LINUX
 	struct sockaddr_in address;
 	memset(&address, 0, sizeof(address));
 	address.sin_family = AF_INET;
@@ -73,6 +76,7 @@ void XServer::beginListen()
 
 	m_b_stop = false;
 	pthread_create(&m_pthread_pthreadId, NULL, loop, static_cast<void*> (this));
+#endif
 }
 
 void XServer::sig_handler(int sig)
@@ -90,6 +94,7 @@ void* XServer::loop(void* _this)
 
 void XServer::run()
 {
+#ifdef __LINUX
 	while (!m_b_stop)
 	{
 		epoll_event events[MAX_EVENT_NUMBER];
@@ -192,6 +197,7 @@ void XServer::run()
 			}
 		}
 	}
+#endif
 }
 
 void XServer::TimeOutCB(TimerNodeInfoBase timerNode)
@@ -240,6 +246,7 @@ XClient::~XClient()
 
 void XClient::beginConnect()
 {
+#ifdef __LINUX
 	memset(&m_sockaddr_address, 0, sizeof(m_sockaddr_address));
 	m_sockaddr_address.sin_family = AF_INET;
 	inet_pton(AF_INET, m_str_ip.c_str(), &m_sockaddr_address.sin_addr);
@@ -253,6 +260,7 @@ void XClient::beginConnect()
 	m_b_stop = false;
 	m_b_connected  = false;
 	pthread_create(&m_pthread_pthreadId, NULL, loop, static_cast<void*> (this));
+#endif
 }
 
 void XClient::sendMessage(XMsgPtr _msg)
@@ -278,6 +286,7 @@ void* XClient::loop(void* _this)
 
 void XClient::run()
 {
+#ifdef __LINUX
 	while (!m_b_stop)
 	{
 		if (m_b_connected)
@@ -372,4 +381,5 @@ void XClient::run()
 			}
 		}
 	}
+#endif
 }

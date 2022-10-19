@@ -41,6 +41,8 @@ public:
     virtual void onExit(XIStatePtr next);
     virtual void onUpdate(float deltaTime);
     
+    bool update();
+    
     void addTransition(XITransitionPtr transition);
     
     void setStateMachine(XIFSMPtr stateMachine);
@@ -80,13 +82,17 @@ public:
     
     void setToState(XIStatePtr toState) { m_state_toState_ptr = toState; }
     XIStatePtr getToState() { return m_state_toState_ptr; }
+    
+    void setOrder(int order) { m_i_order = order; }
+    int getOrder() { return m_i_order; }
 protected:
     std::string m_str_name;
     XIStatePtr m_state_fromState_ptr;
     XIStatePtr m_state_toState_ptr;
+    int m_i_order {0};
 };
 
-class XIFSMBase
+class XIFSMBase : public std::enable_shared_from_this<XIFSMBase>
 {
 public:
     virtual void onUpdate(float deltaTime);

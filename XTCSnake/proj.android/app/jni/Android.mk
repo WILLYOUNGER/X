@@ -6,11 +6,25 @@ LOCAL_MODULE := MyGame_shared
 
 LOCAL_MODULE_FILENAME := libMyGame
 
-LOCAL_SRC_FILES := $(LOCAL_PATH)/hellocpp/main.cpp \
-                   $(LOCAL_PATH)/../../../Classes/AppDelegate.cpp \
-                   $(LOCAL_PATH)/../../../Classes/HelloWorldScene.cpp
-
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
+LOCAL_SRC_FILES := $(LOCAL_PATH)/../../../Classes \
+$(LOCAL_PATH)/../../../Classes/XPublic \
+$(LOCAL_PATH)/../../../Classes/XPublic/XFrames \
+$(LOCAL_PATH)/../../../Classes/XPublic/XFrames/XServlet \
+$(LOCAL_PATH)/../../../Classes/XTCSnake \
+$(LOCAL_PATH)/../../../Classes/XTCSnake/TCSStruct \
+$(LOCAL_PATH)/../../../Classes/third/rapidjson \
+$(LOCAL_PATH)/../../../Classes/third/Xml \
+$(LOCAL_PATH)/../../../Classes/XPublic/XFrames/XServlet \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XDesignBase \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XStruct \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XHTTP \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XLog \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XNet \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XPthread \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XServer \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XSql \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XTools/XUtils \
+$(LOCAL_PATH)/../../../Classes/XPublic/XGame/XStatistic/XBugly \
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END

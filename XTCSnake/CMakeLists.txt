@@ -39,9 +39,6 @@ add_subdirectory(${COCOS2DX_ROOT_PATH}/cocos ${ENGINE_BINARY_PATH}/cocos/core)
 set(GAME_SOURCE)
 set(GAME_HEADER)
 
-ADD_SUBDIRECTORY(third)
-ADD_SUBDIRECTORY(./Classes/XPublic)
-
 set(GAME_RES_FOLDER
     "${CMAKE_CURRENT_SOURCE_DIR}/Resources"
     )
@@ -49,14 +46,14 @@ if(APPLE OR WINDOWS)
     cocos_mark_multi_resources(common_res_files RES_TO "Resources" FOLDERS ${GAME_RES_FOLDER})
 endif()
 
-# add cross-platforms source files and header files 
+# add cross-platforms source files and header files
+
+
 list(APPEND GAME_SOURCE
-     Classes/AppDelegate.cpp
-     Classes/HelloWorldScene.cpp
+        ${XSnake_SRC_LIST}
      )
 list(APPEND GAME_HEADER
-     Classes/AppDelegate.h
-     Classes/HelloWorldScene.h
+        ${XSnake_HEAD_LIST}
      )
 
 if(ANDROID)
@@ -124,7 +121,7 @@ else()
     target_link_libraries(${APP_NAME} -Wl,--whole-archive cpp_android_spec -Wl,--no-whole-archive)
 endif()
 
-target_link_libraries(${APP_NAME} cocos2d X::PUBLIB)
+target_link_libraries(${APP_NAME} cocos2d)
 target_include_directories(${APP_NAME}
         PRIVATE Classes
         PRIVATE ${COCOS2DX_ROOT_PATH}/cocos/audio/include/

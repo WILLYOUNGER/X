@@ -41,6 +41,8 @@ static AppDelegate s_sharedApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [NSThread sleepForTimeInterval:1];
+    
     cocos2d::Application *app = cocos2d::Application::getInstance();
     
     // Initialize the GLView attributes

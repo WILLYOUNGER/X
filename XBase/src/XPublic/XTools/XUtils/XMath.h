@@ -48,6 +48,15 @@ bool PUB_cutPosByDistanceFloat(float x0, float y0, float x1, float y1, float dis
 */
 bool PUB_cutPosByDistanceInt(float x0, float y0, float x1, float y1, float distance, int &resX, int &resY);
 
+/**
+* @brief 求出两点，第二点到第一点的角度
+* @param 开始点：（x0, y0）结束点（x1,y1）angle：角度
+* @return
+*   <em> true <em> 成功
+*   <em> false <em> 失败
+*/
+bool PUB_calTwoPointAngle(float x0, float y0, float x1, float y1, float &angle);
+
 }
 
 
