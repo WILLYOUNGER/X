@@ -1,7 +1,9 @@
 #include "XServerBase.h"
-#include "./XUtils/XUtils.h"
-#include "./XLog/XLog.h"
+#include "XUtils.h"
+#include "XLog.h"
+#ifdef __LINUX
 #include <sys/epoll.h>
+#endif
 #include <sys/uio.h>
 #include <stdlib.h>
 #include <string.h>

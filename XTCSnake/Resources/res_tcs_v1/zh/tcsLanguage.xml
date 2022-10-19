@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dir>
+    <!--主页-->
+    <tcsHomeLayer_title>贪吃蛇</tcsHomeLayer_title>
+    <tcsHomeLayer_smallTitle>冒险</tcsHomeLayer_smallTitle>
+    <tcsHomeLayer_begin>开始游戏</tcsHomeLayer_begin>
+
+    <!--游戏界面-->
+    <tcsGameLayer_score>分数</tcsGameLayer_score>
+    <tcsGameLayer_button>按钮</tcsGameLayer_button>
+    <tcsGameLayer_slide>滑动</tcsGameLayer_slide>
+    <tcsGameLayer_opWay>操作方式</tcsGameLayer_opWay>
+
+    <!--暂停-->
+    <tcsPauseLayer_title>暂停</tcsPauseLayer_title>
+    <tcsPauseLayer_continue>继续游戏</tcsPauseLayer_continue>
+    <tcsPauseLayer_restart>重新开始</tcsPauseLayer_restart>
+    <tcsPauseLayer_backHome>返回首页</tcsPauseLayer_backHome>
+    <tcsPauseLayer_charts>历史排行</tcsPauseLayer_charts>
+
+    <!--排行榜-->
+    <tcsChartsLayer_title>排行榜</tcsChartsLayer_title>
+    <tcsChartsLayer_close>关闭</tcsChartsLayer_close>
+
+    <!--结束界面-->
+    <tcsOverLayer_title>游戏结束</tcsOverLayer_title>
+    <tcsOverLayer_score>您的分数为</tcsOverLayer_score>
+    <tcsOverLayer_again>再来一局</tcsOverLayer_again>
+    <tcsOverLayer_backHome>返回首页</tcsOverLayer_backHome>
+</dir>

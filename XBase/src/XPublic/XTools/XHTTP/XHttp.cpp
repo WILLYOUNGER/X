@@ -6,8 +6,9 @@
 #include "XUtils.h"
 #include "XLog.h"
 #include "XServerBase.h"
-
+#ifdef __LINUX
 #include <sys/epoll.h>
+#endif
 #include <sys/stat.h>
 #include <sys/mman.h>
 #include <sys/types.h>
@@ -356,7 +357,9 @@ void XHttp::sendResponse()
 	{
 		XServerBase::m_reply[m_msg->getSocket()]->push_back(m_response);
 	}
+#ifdef __LINUX
 	NETUTILS->modfd(m_msg->getEpollfd(), m_msg->getSocket(), EPOLLOUT, 0);
+#endif
 }
 
 void XHttp::dealresponse(std::string &str)

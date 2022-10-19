@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dir>
+    <!--主页-->
+    <tcsHomeLayer_title>贪吃蛇</tcsHomeLayer_title>
+    <tcsHomeLayer_begin>开始游戏</tcsHomeLayer_begin>
+
+    <!--暂停-->
+    <tcsPauseLayer_title>暂停</tcsPauseLayer_title>
+    <tcsPauseLayer_continue>继续游戏</tcsPauseLayer_continue>
+    <tcsPauseLayer_restart>重新开始</tcsPauseLayer_restart>
+    <tcsPauseLayer_backHome>返回首页</tcsPauseLayer_backHome>
+    <tcsPauseLayer_charts>查看排行</tcsPauseLayer_charts>
+
+    <!--排行榜-->
+    <tcsChartsLayer_title>排行榜</tcsChartsLayer_title>
+</dir>
