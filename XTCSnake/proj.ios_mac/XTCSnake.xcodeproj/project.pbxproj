@@ -29,6 +29,7 @@
 		487CD92628D4C1CD0079B06D /* XTCSGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92328D4C1CD0079B06D /* XTCSGameScene.cpp */; };
 		487CD92A28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */; };
 		487CD92B28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */; };
+		489BA3B229002B0A00455838 /* XScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 489BA3B129002B0A00455838 /* XScreenUtil.m */; };
 		48B1972A28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */; };
 		48B1972B28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */; };
 		48BA2A1328DFF6ED000078F5 /* XTCSMap.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75828DEFCB200E73118 /* XTCSMap.hpp */; };
@@ -113,8 +114,6 @@
 		48BED75A28DEFCB200E73118 /* XTCSMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48BED75728DEFCB200E73118 /* XTCSMap.cpp */; };
 		48F08A2D28F47B4400B1DE68 /* XTCSSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */; };
 		48F08A2E28F47B4400B1DE68 /* XTCSSoundManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */; };
-		48F08A3828F5C11B00B1DE68 /* XScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */; };
-		48F08A3928F5C11B00B1DE68 /* XScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */; };
 		48F08A3F28F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */; };
 		48F08A4028F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */; };
 		48F08A4728F86FDD00B1DE68 /* CrashReport.mm in Sources */ = {isa = PBXBuildFile; fileRef = 48F08A4528F86FDD00B1DE68 /* CrashReport.mm */; };
@@ -213,6 +212,8 @@
 		487CD92428D4C1CD0079B06D /* XTCSGameScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSGameScene.hpp; sourceTree = "<group>"; };
 		487CD92828D8C3390079B06D /* XTCSHomeScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSHomeScene.cpp; sourceTree = "<group>"; };
 		487CD92928D8C3390079B06D /* XTCSHomeScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSHomeScene.hpp; sourceTree = "<group>"; };
+		489BA3B029002B0A00455838 /* XScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XScreenUtil.h; path = ../../XBase/src/XPublic/XTools/XUtils/XScreenUtil.h; sourceTree = "<group>"; };
+		489BA3B129002B0A00455838 /* XScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XScreenUtil.m; path = ../../XBase/src/XPublic/XTools/XUtils/XScreenUtil.m; sourceTree = "<group>"; };
 		48B1972828E8554000D6CD99 /* XTCSCommLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSCommLayer.cpp; sourceTree = "<group>"; };
 		48B1972928E8554000D6CD99 /* XTCSCommLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XTCSCommLayer.hpp; sourceTree = "<group>"; };
 		48B1974A28EB08E000D6CD99 /* swift-algorithms-main */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "swift-algorithms-main"; path = "../../../a d/swift/swift-algorithms-main"; sourceTree = "<group>"; };
@@ -303,8 +304,6 @@
 		48F08A2B28F47B4400B1DE68 /* XTCSSoundManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = XTCSSoundManager.hpp; sourceTree = "<group>"; };
 		48F08A2C28F47B4400B1DE68 /* XTCSSoundManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTCSSoundManager.cpp; sourceTree = "<group>"; };
 		48F08A3428F5BC6600B1DE68 /* XCOCOS2DX.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = XCOCOS2DX.hpp; sourceTree = "<group>"; };
-		48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XScreenUtil.m; sourceTree = "<group>"; };
-		48F08A3A28F5C13700B1DE68 /* XScreenUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XScreenUtil.h; sourceTree = "<group>"; };
 		48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XCOCOS2DX.mm; sourceTree = "<group>"; };
 		48F08A4528F86FDD00B1DE68 /* CrashReport.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CrashReport.mm; path = ../../XBase/src/XPublic/XStatistic/XBugly/CrashReport.mm; sourceTree = "<group>"; };
 		48F08A4628F86FDD00B1DE68 /* CrashReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CrashReport.h; path = ../../XBase/src/XPublic/XStatistic/XBugly/CrashReport.h; sourceTree = "<group>"; };
@@ -735,6 +734,8 @@
 		48BED71D28DCA82F00E73118 /* XUtils */ = {
 			isa = PBXGroup;
 			children = (
+				489BA3B029002B0A00455838 /* XScreenUtil.h */,
+				489BA3B129002B0A00455838 /* XScreenUtil.m */,
 				48BA2A2128E1E630000078F5 /* XTime.h */,
 				48BA2A1928E04B76000078F5 /* XTime.cpp */,
 				48BED75128DCB6D500E73118 /* XString.h */,
@@ -751,8 +752,6 @@
 				48BED74128DCA8B300E73118 /* XWheelTimer.h */,
 				48F08A3E28F5C62900B1DE68 /* XCOCOS2DX.mm */,
 				48F08A3428F5BC6600B1DE68 /* XCOCOS2DX.hpp */,
-				48F08A3728F5C11B00B1DE68 /* XScreenUtil.m */,
-				48F08A3A28F5C13700B1DE68 /* XScreenUtil.h */,
 			);
 			name = XUtils;
 			sourceTree = "<group>";
@@ -982,12 +981,12 @@
 				48BA2A1528DFF6FE000078F5 /* XTCSInfoManager.hpp in Sources */,
 				48BA2A1428DFF6F9000078F5 /* XTCSDataStruct.hpp in Sources */,
 				48BA2A1328DFF6ED000078F5 /* XTCSMap.hpp in Sources */,
-				48F08A3828F5C11B00B1DE68 /* XScreenUtil.m in Sources */,
 				48B1972A28E8554000D6CD99 /* XTCSCommLayer.cpp in Sources */,
 				48BED73828DCA89C00E73118 /* XLog.cpp in Sources */,
 				48BED73028DCA88600E73118 /* XHttp.cpp in Sources */,
 				48BA2A1C28E04B76000078F5 /* XTime.cpp in Sources */,
 				48BED73428DCA89000E73118 /* XBaseNet.cpp in Sources */,
+				489BA3B229002B0A00455838 /* XScreenUtil.m in Sources */,
 				48BED75528DEF92B00E73118 /* XTCSDataStruct.cpp in Sources */,
 				48F08A3F28F5C62900B1DE68 /* XCOCOS2DX.mm in Sources */,
 				48BED68128DCA36400E73118 /* XTCSSnake.hpp in Sources */,
@@ -1050,7 +1049,6 @@
 				48BED67E28DCA07F00E73118 /* XTCSSnake.cpp in Sources */,
 				48BED73528DCA89000E73118 /* XBaseNet.cpp in Sources */,
 				487CD92B28D8C3390079B06D /* XTCSHomeScene.cpp in Sources */,
-				48F08A3928F5C11B00B1DE68 /* XScreenUtil.m in Sources */,
 				487CD92228D4C1AB0079B06D /* XTCSInfoManager.cpp in Sources */,
 				48BED6E728DCA74800E73118 /* XNetStruct.cpp in Sources */,
 				48BED72528DCA84A00E73118 /* XPthreadPool.cpp in Sources */,
