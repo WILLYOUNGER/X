@@ -27,9 +27,9 @@ namespace XFILETOOL
         m_XJsonType_type = XJSONTYPE_NONE;
     }
 
-    XJsonValue::XJsonValue(int value) : m_i_value(value)
+    XJsonValue::XJsonValue(long value) : m_l_value(value)
     {
-        m_XJsonType_type = XJSONTYPE_INT;
+        m_XJsonType_type = XJSONTYPE_LONG;
     }
 
     XJsonValue::XJsonValue(bool value) : m_b_value(value)
@@ -57,10 +57,10 @@ namespace XFILETOOL
         m_XJsonType_type = XJSONTYPE_ARRAY;
     }
 
-    void XJsonValue::setIntValue(int value)
+    void XJsonValue::setLongValue(long value)
     {
-        m_XJsonType_type = XJSONTYPE_INT;
-        m_i_value = value;
+        m_XJsonType_type = XJSONTYPE_LONG;
+        m_l_value = value;
     }
 
     void XJsonValue::setDoubleValue(double value)

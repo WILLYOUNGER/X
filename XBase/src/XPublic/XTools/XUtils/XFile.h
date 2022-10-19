@@ -16,12 +16,15 @@
 */
 
 #ifndef X_PUBLIC_TOOLS_UTILS_FIEL_H
-#define X_PUBLIC_TOOLS_UTILS_FILE_H
+#define X_PUBLIC_TOOLS_UTILS_FIEL_H
 
 #include <vector>
 #include <list>
+#include <string>
 
 #include "rapidjson/document.h"
+#include "Xml/tinyxml.h"
+#include "Xml/tinystr.h"
 #include "XUtilsStruct.h"
 
 /**
@@ -217,6 +220,26 @@ namespace XFILETOOL
 
     private:
         static XFileTool* m_xFileTool_instance;
+    };
+
+    class XXmlTool
+    {
+    public:
+        XXmlTool();
+            
+        ~XXmlTool();
+        
+        std::string getValueByKey(std::string key)
+        {
+            return m_map_KeyValue[key];
+        }
+
+        bool init(std::string);
+    private:
+        
+        TiXmlDocument* m_tiXmlDoc_doc;
+        
+        std::map<std::string, std::string> m_map_KeyValue;
     };
 
     #define XJSONTOOLINSTANCE() XJsonTool::GetInstance()

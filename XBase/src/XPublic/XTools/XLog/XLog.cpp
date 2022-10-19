@@ -2,18 +2,35 @@
 #include <cstring>
 #include <cstdarg>
 #include <unistd.h>
+#include <cstdio>
+#include <iostream>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include "sys/time.h"
 
+#include "XFile.h"
+
+#ifdef __COCOS2D
+#include "cocos2d.h"
+#endif
+
 using namespace std;
+using namespace XFILETOOL;
 
 XLog::XLog()
 {
+    m_i_closeLog = 0;
 	m_ll_count = 0;
 	m_b_isAsync = false;
     memset(m_c_dirName_s, '\0', sizeof(m_c_dirName_s));
-    strcpy(m_c_dirName_s, "./log");
+    
+#ifdef __COCOS2D
+    string _str_temp = cocos2d::FileUtils::getInstance()->getWritablePath();
+    //getcwd(m_c_dirName_s,sizeof(m_c_dirName_s));
+    strcpy(m_c_dirName_s, _str_temp.c_str());
+#endif
+    
+    strcpy(m_c_dirName_s + string(m_c_dirName_s).length(), "log");
 }
 
 XLog::~XLog()
@@ -47,17 +64,16 @@ bool XLog::init(const char* fileName, int closeLog, int level, int logBufSize, i
 	struct tm my_tm = *sys_tm;
 
     std::string file_full_name = std::string(m_c_dirName_s) + "/" + to_string(my_tm.tm_year + 1900) + "_" + to_string(my_tm.tm_mon + 1) + "_" + to_string(my_tm.tm_mday) + std::string(m_c_fileName_s);
-
-    int ret = access(m_c_dirName_s, F_OK);
-    if (!ret)
+    
+    if (XFILETOOLINSTANCE()->dirOrFileExist(m_c_dirName_s))
     {
-        ret = mkdir(m_c_dirName_s, S_IRWXU);
-        if (!ret)
+        int ret = mkdir(m_c_dirName_s, S_IRWXU);
+        if (ret)
         {
             return false;
         }
     }
-
+    
     const char* file_full_name_c = file_full_name.c_str();
 
 	m_i_today = my_tm.tm_mday;

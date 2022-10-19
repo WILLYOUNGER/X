@@ -91,4 +91,12 @@ bool PUB_cutPosByDistanceInt(float x0, float y0, float x1, float y1, float dista
     return _b_res;
 }
 
+bool PUB_calTwoPointAngle(float x0, float y0, float x1, float y1, float& angle)
+{
+    float x = abs(x0 - x1);
+    float y = abs(y0 - y1);
+    float z = sqrt(x * x + y * y);
+    angle = round(asin(y / z) /M_PI  * 180);
+    return true;
+}
 }
