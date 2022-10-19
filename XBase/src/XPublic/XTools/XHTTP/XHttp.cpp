@@ -15,6 +15,7 @@
 #include <map>
 #include <list>
 #include <regex>
+#include <fstream>
 
 using namespace std;
 using namespace XNETSTRUCT;
@@ -474,34 +475,40 @@ void XHttp::do_request(string str)
 	        m_response.setHttpCode(BAD_REQUEST);
 	    }
 
+		m_response.setHttpCode(FILE_REQUEST);
+	    //int fd = open(fullPath.c_str(), O_RDONLY);
+		std::ifstream f{fullPath.c_str(), std::ios::binary};
+		std::stringstream _strStream_content;
+		_strStream_content << f.rdbuf();
+		std::string _str_content = _strStream_content.str();
+		m_response.setContentLength(_str_content.length());
+		m_response.setContent(_str_content);
 
-	    int fd = open(fullPath.c_str(), O_RDONLY);
-	    m_response.setContentLength(static_cast<int>(_file_stat.st_size));
-	    if (_type == -1)
-	    {
-	    	m_response.setHttpCode(FILE_REQUEST);
-	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
-	    	m_response.setFileAddress(_tmp);
-	    }
-	    else if (_type == 1)
-	    {
-	    	m_response.setHttpCode(ICO_REQUEST);
-	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
-	    	m_response.setFileAddress(_tmp);
-	    }
-	    else if (_type == 2)
-	    {
-	    	m_response.setHttpCode(JPG_REQUEST);
-	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
-	    	m_response.setFileAddress(_tmp);
-	    }
-	    else if (_type == 3)
-	    {
-	    	m_response.setHttpCode(GIF_REQUEST);
-	    	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
-	    	m_response.setFileAddress(_tmp);
-	    }
-	    close(fd);
+	    // if (_type == -1)
+	    // {
+	    // 	m_response.setHttpCode(FILE_REQUEST);
+	    // 	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
+	    // 	m_response.setFileAddress(_tmp);
+	    // }
+	    // else if (_type == 1)
+	    // {
+	    // 	m_response.setHttpCode(ICO_REQUEST);
+	    // 	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
+	    // 	m_response.setFileAddress(_tmp);
+	    // }
+	    // else if (_type == 2)
+	    // {
+	    // 	m_response.setHttpCode(JPG_REQUEST);
+	    // 	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
+	    // 	m_response.setFileAddress(_tmp);
+	    // }
+	    // else if (_type == 3)
+	    // {
+	    // 	m_response.setHttpCode(GIF_REQUEST);
+	    // 	char* _tmp = static_cast<char *>(mmap(0, _file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0));
+	    // 	m_response.setFileAddress(_tmp);
+	    // }
+	    //close(fd);
 	    m_response.setNotEmpty();
 	}
 }

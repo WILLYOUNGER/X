@@ -89,6 +89,7 @@ bool XWebServer::WriteCallback(XSocket epollfd, XSocket socket)
 
             }
             XLOG_INFO("%s", _head);
+            //XLOG_INFO("%s", _content);
             free(_head);
             free(_content);
 

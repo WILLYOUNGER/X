@@ -20,3 +20,6 @@ target_link_libraries(test
     PUBLIC 
         X::PUBLIB
 )
+
+ADD_SUBDIRECTORY(chat)
+ADD_SUBDIRECTORY(protobuf)
